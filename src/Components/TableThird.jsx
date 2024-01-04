@@ -71,7 +71,7 @@ import Paper from "@mui/material/Paper";
 import IconButton from "@mui/material/IconButton";
 import { visuallyHidden } from "@mui/utils";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import india from "../assets/image/india.png";
+import india from "../../public/assets/image/india.png";
 import { Button } from "@mui/material";
 
 function createData(id, name, create, price, publish, sub) {

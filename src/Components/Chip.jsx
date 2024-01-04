@@ -689,7 +689,7 @@
 //   );
 // }
 
-import ChipView from "../sections/chip-view";
+import ChipView from "../sections/mui/chip-view";
 
 // ----------------------------------------------------------------------
 

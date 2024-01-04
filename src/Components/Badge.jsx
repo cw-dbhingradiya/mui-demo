@@ -1,4 +1,4 @@
-import BadgeView from "../sections/badge-view";
+import BadgeView from "../sections/mui/badge-view";
 
 // ----------------------------------------------------------------------
 

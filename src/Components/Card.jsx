@@ -34,7 +34,7 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import PropTypes from "prop-types";
 import LinearProgress from "@mui/material/LinearProgress";
-import cardImg from "../assets/image/cardimg.png";
+import cardImg from "../../public/assets/image/cardimg.png";
 import CardTable from "../Components/CardTable";
 
 const bull = (

@@ -1,4 +1,4 @@
-import MenuView from "../sections/menu-view";
+import MenuView from "../sections/mui/menu-view";
 
 // ----------------------------------------------------------------------
 

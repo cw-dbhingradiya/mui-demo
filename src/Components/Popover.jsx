@@ -1,4 +1,4 @@
-import PopoverView from "../sections/popover-view";
+import PopoverView from "../sections/mui/popover-view";
 
 // ----------------------------------------------------------------------
 

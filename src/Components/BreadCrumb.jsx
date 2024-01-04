@@ -1,4 +1,4 @@
-import BreadcrumbsView from "../sections/breadCrumb-view";
+import BreadcrumbsView from "../sections/mui/breadCrumb-view";
 
 // ----------------------------------------------------------------------
 

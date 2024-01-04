@@ -1,4 +1,4 @@
-import ListView from "../sections/list-view";
+import ListView from "../sections/mui/list-view";
 
 // ----------------------------------------------------------------------
 

@@ -1,4 +1,4 @@
-import RadioButtonView from "../sections/radio-button-view";
+import RadioButtonView from "../sections/mui/radio-button-view";
 
 // ----------------------------------------------------------------------
 

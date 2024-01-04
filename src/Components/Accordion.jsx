@@ -173,7 +173,7 @@
 //   );
 // }
 
-import AccordionView from "../sections/accordion-view";
+import AccordionView from "../sections/mui/accordion-view";
 
 // ----------------------------------------------------------------------
 

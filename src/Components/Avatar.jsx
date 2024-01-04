@@ -1,4 +1,4 @@
-import AvatarView from "../sections/avatar-view";
+import AvatarView from "../sections/mui/avatar-view";
 
 // ----------------------------------------------------------------------
 

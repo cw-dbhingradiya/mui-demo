@@ -1,4 +1,4 @@
-import TabsView from "../sections/tabs-view";
+import TabsView from "../sections/mui/tabs-view";
 
 export default function Tabs() {
   return <TabsView />;

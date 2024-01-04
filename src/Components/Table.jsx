@@ -86,7 +86,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import { Stack } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import product from "../assets/image/product.jpeg";
+import product from "../../public/assets/image/product.jpeg";
 import TableSecond from "../Components/TableSecond";
 import TableThird from "../Components/TableThird";
 

@@ -261,7 +261,7 @@
 
 // export default AvatarUpload;
 
-import UploadView from "../sections/upload-view";
+import UploadView from "../sections/extra/upload-view";
 
 // ----------------------------------------------------------------------
 

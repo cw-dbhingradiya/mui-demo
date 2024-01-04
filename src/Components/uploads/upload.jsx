@@ -13,7 +13,7 @@ import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import MultiFilePreview from "./preview-multi-file";
 import RejectionFiles from "./errors-rejection-files";
 import SingleFilePreview from "./preview-single-file";
-import illustration_upload from "../../assets/image/illustration_upload.svg";
+import illustration_upload from "../../../public/assets/image/illustration_upload.svg";
 
 // ----------------------------------------------------------------------
 

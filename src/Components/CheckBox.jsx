@@ -1,4 +1,4 @@
-import CheckboxView from "../sections/checkbox-view";
+import CheckboxView from "../sections/mui/checkbox-view";
 
 // ----------------------------------------------------------------------
 

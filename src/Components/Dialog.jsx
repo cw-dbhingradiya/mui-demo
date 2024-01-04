@@ -28,8 +28,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import MessageIcon from "@mui/icons-material/Message";
 import AddIcon from "@mui/icons-material/Add";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import mastercard from "../assets/image/mastercard.png";
-import visa from "../assets/image/visa.png";
+import mastercard from "../../public/assets/image/mastercard.png";
+import visa from "../../public/assets/image/visa.png";
 
 export default function AlertDialog() {
   const [open, setOpen] = React.useState(false);

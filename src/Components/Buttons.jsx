@@ -687,7 +687,7 @@
 //   );
 // }
 
-import ButtonView from "../sections/button-view";
+import ButtonView from "../sections/mui/button-view";
 
 // ----------------------------------------------------------------------
 

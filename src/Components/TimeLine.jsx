@@ -1,4 +1,4 @@
-import TimelineView from "../sections/timeline-view";
+import TimelineView from "../sections/mui/timeline-view";
 
 // ----------------------------------------------------------------------
 

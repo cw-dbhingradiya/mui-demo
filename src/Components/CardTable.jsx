@@ -21,7 +21,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TablePagination from "@mui/material/TablePagination";
 import FormControlLabel from "@mui/material/FormControlLabel";
 
-import india from "../assets/image/india.png";
+import india from "../../public/assets/image/india.png";
 
 function createData(id, name, create, stock, price, publish, sub) {
   return {

@@ -32,6 +32,7 @@ import Carousel from "../Components/Carousel";
 import CssBaseline from "@mui/material/CssBaseline";
 import WithEmotion from "../Components/WithEmotion";
 import TypographyFont from "../Components/TypographyFont";
+import ComponentsView from "../sections/view";
 
 import Card from "../Components/Card";
 import {
@@ -78,7 +79,9 @@ const Home = () => {
       {/* <Table /> */}
       {/* <Popover /> */}
       {/* <Snackbar /> */}
-      <Upload />
+      {/* <Upload /> */}
+
+      <ComponentsView />
     </div>
   );
 };

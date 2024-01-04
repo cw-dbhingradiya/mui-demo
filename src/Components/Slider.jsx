@@ -1,4 +1,4 @@
-import SliderView from "../sections/slider-view";
+import SliderView from "../sections/mui/slider-view";
 
 // ----------------------------------------------------------------------
 

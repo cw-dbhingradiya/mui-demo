@@ -1,4 +1,4 @@
-import SwitchView from "../sections/switch-view";
+import SwitchView from "../sections/mui/switch-view";
 
 // ----------------------------------------------------------------------
 

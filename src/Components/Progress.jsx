@@ -138,7 +138,7 @@
 //   );
 // }
 
-import ProgressView from "../sections/progress-view";
+import ProgressView from "../sections/mui/progress-view";
 
 // ----------------------------------------------------------------------
 
