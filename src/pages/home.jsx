@@ -26,22 +26,17 @@ import Upload from "../Components/Upload";
 import Snackbar from "../Components/Snackbar";
 import Slider from "../Components/Slider";
 import Textfield from "../Components/Textfield";
-import Switch from "../Components/Switch";
+import Switch from "../Components/Switchs";
 import Table from "../Components/Table";
 import Carousel from "../Components/Carousel";
 import CssBaseline from "@mui/material/CssBaseline";
 import WithEmotion from "../Components/WithEmotion";
 import TypographyFont from "../Components/TypographyFont";
 import ComponentsView from "../sections/view";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Card from "../Components/Card";
-import {
-  ThemeProvider,
-  createTheme,
-  Typography,
-  css,
-  FormControlLabel,
-} from "@mui/material";
+import { ThemeProvider, createTheme, Typography, css, FormControlLabel } from "@mui/material";
 
 const Home = () => {
   return (
@@ -80,6 +75,11 @@ const Home = () => {
       {/* <Popover /> */}
       {/* <Snackbar /> */}
       {/* <Upload /> */}
+      {/* <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<ComponentsView />}></Route>
+        </Routes>
+      </BrowserRouter> */}
 
       <ComponentsView />
     </div>

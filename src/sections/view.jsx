@@ -10,7 +10,7 @@ import Typography from "@mui/material/Typography";
 
 // import ComponentHero from "./component-hero";
 import ComponentCard from "./component-card";
-import { muiNav, foundationNav } from "./config-navigation";
+import { muiNav, foundationNav, extraNav } from "./config-navigation";
 
 // ----------------------------------------------------------------------
 
@@ -20,6 +20,20 @@ export default function ComponentsView() {
       {/* <ComponentHero /> */}
 
       <Container sx={{ pt: 10, pb: 15 }}>
+        <Stack spacing={3}>
+          <Stack spacing={1}>
+            <Typography variant="h5">Foundation</Typography>
+          </Stack>
+
+          <Grid>
+            {foundationNav.map((item) => (
+              <ComponentCard key={item.name} item={item} />
+            ))}
+          </Grid>
+        </Stack>
+
+        <Divider sx={{ borderStyle: "dashed", my: 8 }} />
+
         <Stack spacing={3}>
           <Stack spacing={1}>
             <Typography variant="h5">MUI</Typography>
@@ -33,6 +47,18 @@ export default function ComponentsView() {
         </Stack>
 
         <Divider sx={{ borderStyle: "dashed", my: 8 }} />
+
+        <Stack spacing={3}>
+          <Stack spacing={1}>
+            <Typography variant="h5">Extra Components</Typography>
+          </Stack>
+
+          <Grid>
+            {extraNav.map((item) => (
+              <ComponentCard key={item.name} item={item} />
+            ))}
+          </Grid>
+        </Stack>
       </Container>
     </>
   );

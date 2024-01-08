@@ -2,16 +2,9 @@ import { paramCase, snakeCase } from "../utils/change-case";
 
 // ----------------------------------------------------------------------
 
-const getHref = (category, name) =>
-  `/components/${category}/${paramCase(name)}`;
+const getHref = (category, name) => `/${category}/${paramCase(name)}`;
 
-export const foundationNav = [
-  "Colors",
-  "Typography",
-  "Shadows",
-  "Grid",
-  "Icons",
-].map((name) => ({
+export const foundationNav = ["Colors", "Typography", "Grid"].map((name) => ({
   name,
   href: getHref("foundation", name),
   icon: `/assets/components/ic_${snakeCase(name)}.svg`,
@@ -20,7 +13,6 @@ export const foundationNav = [
 export const muiNav = [
   "Accordion",
   "Alert",
-  "Autocomplete",
   "Avatar",
   "Badge",
   "Breadcrumbs",
@@ -44,7 +36,6 @@ export const muiNav = [
   "Textfield",
   "Timeline",
   "Tooltip",
-  "Transfer List",
   "Data Grid",
 ].map((name) => ({
   name,
@@ -52,29 +43,8 @@ export const muiNav = [
   icon: `/assets/components/ic_${snakeCase(name)}.svg`,
 }));
 
-// export const extraNav = [
-//   "Chart",
-//   "Map",
-//   "Editor",
-//   "Copy to clipboard",
-//   "Upload",
-//   "Carousel",
-//   "Multi language",
-//   "Animate",
-//   "Mega Menu",
-//   "Form Validation",
-//   "Lightbox",
-//   "Image",
-//   "Label",
-//   "Scroll",
-//   "Scroll Progress",
-//   "Snackbar",
-//   "Text Max Line",
-//   "Navigation Bar",
-//   "Organization Chart",
-//   "Markdown",
-// ].map((name) => ({
-//   name,
-//   href: getHref("extra", name),
-//   icon: `../../public/assets/components/ic_extra_${snakeCase(name)}.svg`,
-// }));
+export const extraNav = ["Upload", "Carousel", "Snackbar"].map((name) => ({
+  name,
+  href: getHref("extra", name),
+  icon: `../../public/assets/components/ic_extra_${snakeCase(name)}.svg`,
+}));

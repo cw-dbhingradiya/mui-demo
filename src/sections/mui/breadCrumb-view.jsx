@@ -7,6 +7,11 @@ import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import { Stack } from "@mui/material";
 
+import Masonry from "@mui/lab/Masonry";
+import Container from "@mui/material/Container";
+
+import ComponentBlock from "../component-block";
+
 const handleButtonClick = () => {
   // Handle the action when the button is clicked
   console.log("Button clicked!");
@@ -14,135 +19,136 @@ const handleButtonClick = () => {
 
 const DotBreadcrumb = () => {
   return (
-    <Stack gap={5}>
-      <Typography variant="h4">Text</Typography>
-      <Breadcrumbs aria-label="breadcrumb" separator="•">
-        <Link underline="none" variant="body2" color="buttonDefault.main">
-          Root
-        </Link>
-        <Link underline="none" variant="body2" color="breadText.main">
-          Current
-        </Link>
-      </Breadcrumbs>
+    <Container sx={{ my: 10 }}>
+      <Stack spacing={3}>
+        <ComponentBlock title="Text" sx={{ flexDirection: "column" }}>
+          <Breadcrumbs aria-label="breadcrumb" separator="•">
+            <Link underline="none" variant="body2" color="buttonDefault.main">
+              Root
+            </Link>
+            <Link underline="none" variant="body2" color="breadText.main">
+              Current
+            </Link>
+          </Breadcrumbs>
 
-      <Breadcrumbs aria-label="breadcrumb" separator="•">
-        <Link underline="none" variant="body2" color="buttonDefault.main">
-          Root
-        </Link>
-        <Link underline="none" variant="body2" color="buttonDefault.main">
-          Link
-        </Link>
-        <Link underline="none" variant="body2" color="breadText.main">
-          Current
-        </Link>
-      </Breadcrumbs>
+          <Breadcrumbs aria-label="breadcrumb" separator="•">
+            <Link underline="none" variant="body2" color="buttonDefault.main">
+              Root
+            </Link>
+            <Link underline="none" variant="body2" color="buttonDefault.main">
+              Link
+            </Link>
+            <Link underline="none" variant="body2" color="breadText.main">
+              Current
+            </Link>
+          </Breadcrumbs>
 
-      <Breadcrumbs aria-label="breadcrumb" separator="•">
-        <Link underline="none" variant="body2" color="buttonDefault.main">
-          Root
-        </Link>
-        <Link underline="none" variant="body2" color="buttonDefault.main">
-          Link
-        </Link>
-        <Link underline="none" variant="body2" color="buttonDefault.main">
-          Link
-        </Link>
-        <Link underline="none" variant="body2" color="breadText.main">
-          Current
-        </Link>
-      </Breadcrumbs>
+          <Breadcrumbs aria-label="breadcrumb" separator="•">
+            <Link underline="none" variant="body2" color="buttonDefault.main">
+              Root
+            </Link>
+            <Link underline="none" variant="body2" color="buttonDefault.main">
+              Link
+            </Link>
+            <Link underline="none" variant="body2" color="buttonDefault.main">
+              Link
+            </Link>
+            <Link underline="none" variant="body2" color="breadText.main">
+              Current
+            </Link>
+          </Breadcrumbs>
+        </ComponentBlock>
 
-      <Typography variant="h4">Icon</Typography>
-      <Breadcrumbs aria-label="breadcrumb" separator="•">
-        <Link underline="none" variant="body2" color="buttonDefault.main">
-          <LinkedInIcon /> Root
-        </Link>
-        <Link underline="none" variant="body2" color="breadText.main">
-          <LinkedInIcon color="breadText.main" />
-          Current
-        </Link>
-      </Breadcrumbs>
+        <ComponentBlock title="Icon" sx={{ flexDirection: "column" }}>
+          <Breadcrumbs aria-label="breadcrumb" separator="•">
+            <Link underline="none" variant="body2" color="buttonDefault.main">
+              <LinkedInIcon /> Root
+            </Link>
+            <Link underline="none" variant="body2" color="breadText.main">
+              <LinkedInIcon color="breadText.main" />
+              Current
+            </Link>
+          </Breadcrumbs>
 
-      <Breadcrumbs aria-label="breadcrumb" separator="•">
-        <Link underline="none" variant="body2" color="buttonDefault.main">
-          <LinkedInIcon /> Root
-        </Link>
-        <Link underline="none" variant="body2" color="buttonDefault.main">
-          <LinkedInIcon /> Link
-        </Link>
-        <Link underline="none" variant="body2" color="breadText.main">
-          <LinkedInIcon color="breadText.main" /> Current
-        </Link>
-      </Breadcrumbs>
+          <Breadcrumbs aria-label="breadcrumb" separator="•">
+            <Link underline="none" variant="body2" color="buttonDefault.main">
+              <LinkedInIcon /> Root
+            </Link>
+            <Link underline="none" variant="body2" color="buttonDefault.main">
+              <LinkedInIcon /> Link
+            </Link>
+            <Link underline="none" variant="body2" color="breadText.main">
+              <LinkedInIcon color="breadText.main" /> Current
+            </Link>
+          </Breadcrumbs>
 
-      <Breadcrumbs aria-label="breadcrumb" separator="•">
-        <Link underline="none" variant="body2" color="buttonDefault.main">
-          <LinkedInIcon /> Root
-        </Link>
-        <Link underline="none" variant="body2" color="buttonDefault.main">
-          <LinkedInIcon /> Link
-        </Link>
-        <Link underline="none" variant="body2" color="buttonDefault.main">
-          <LinkedInIcon /> Link
-        </Link>
-        <Link underline="none" variant="body2" color="breadText.main">
-          <LinkedInIcon color="breadText.main" /> Current
-        </Link>
-      </Breadcrumbs>
+          <Breadcrumbs aria-label="breadcrumb" separator="•">
+            <Link underline="none" variant="body2" color="buttonDefault.main">
+              <LinkedInIcon /> Root
+            </Link>
+            <Link underline="none" variant="body2" color="buttonDefault.main">
+              <LinkedInIcon /> Link
+            </Link>
+            <Link underline="none" variant="body2" color="buttonDefault.main">
+              <LinkedInIcon /> Link
+            </Link>
+            <Link underline="none" variant="body2" color="breadText.main">
+              <LinkedInIcon color="breadText.main" /> Current
+            </Link>
+          </Breadcrumbs>
+        </ComponentBlock>
 
-      <Typography variant="h4">Cases</Typography>
-      <Typography variant="h3">Title</Typography>
-      <Breadcrumbs separator="•" aria-label="breadcrumb">
-        <Link underline="none" variant="body2" color="buttonDefault.main">
-          <LinkedInIcon /> Root
-        </Link>
-        <Link underline="none" variant="body2" color="buttonDefault.main">
-          <LinkedInIcon /> Link
-        </Link>
-        <Link underline="none" variant="body2" color="breadText.main">
-          <LinkedInIcon color="breadText.main" /> Current
-        </Link>
-      </Breadcrumbs>
+        <ComponentBlock title="Title">
+          <Breadcrumbs separator="•" aria-label="breadcrumb">
+            <Link underline="none" variant="body2" color="buttonDefault.main">
+              <LinkedInIcon /> Root
+            </Link>
+            <Link underline="none" variant="body2" color="buttonDefault.main">
+              <LinkedInIcon /> Link
+            </Link>
+            <Link underline="none" variant="body2" color="breadText.main">
+              <LinkedInIcon color="breadText.main" /> Current
+            </Link>
+          </Breadcrumbs>
+        </ComponentBlock>
 
-      <Typography variant="h3">Title + Action</Typography>
-      <Stack direction="row" alignItems="center" justifyContent="space-between">
-        <Breadcrumbs separator="•" aria-label="breadcrumb">
-          <Link underline="none" variant="body2" color="buttonDefault.main">
-            <LinkedInIcon /> Root
-          </Link>
-          <Link underline="none" variant="body2" color="buttonDefault.main">
-            <LinkedInIcon /> Link
-          </Link>
-          <Link underline="none" variant="body2" color="breadText.main">
-            <LinkedInIcon color="breadText.main" /> Current
-          </Link>
-        </Breadcrumbs>
-        <Button variant="contained" color="neutral" onClick={handleButtonClick}>
-          Action
-        </Button>
+        <ComponentBlock title="Title + Action">
+          <Stack direction="row" alignItems="center" justifyContent="space-between">
+            <Breadcrumbs separator="•" aria-label="breadcrumb">
+              <Link underline="none" variant="body2" color="buttonDefault.main">
+                <LinkedInIcon /> Root
+              </Link>
+              <Link underline="none" variant="body2" color="buttonDefault.main">
+                <LinkedInIcon /> Link
+              </Link>
+              <Link underline="none" variant="body2" color="breadText.main">
+                <LinkedInIcon color="breadText.main" /> Current
+              </Link>
+            </Breadcrumbs>
+            <Button variant="contained" color="neutral" onClick={handleButtonClick}>
+              Action
+            </Button>
+          </Stack>
+        </ComponentBlock>
+
+        <ComponentBlock title="On Mobile">
+          <Breadcrumbs separator="•" aria-label="breadcrumb">
+            <Link underline="none" variant="body2" color="buttonDefault.main">
+              <LinkedInIcon /> Root
+            </Link>
+            <Link underline="none" variant="body2" color="buttonDefault.main">
+              <LinkedInIcon /> Link
+            </Link>
+            <Link underline="none" variant="body2" color="breadText.main">
+              <LinkedInIcon color="breadText.main" /> Current
+            </Link>
+          </Breadcrumbs>
+          <Button variant="contained" color="neutral" sx={{ width: "fit-content" }} onClick={handleButtonClick}>
+            Action
+          </Button>
+        </ComponentBlock>
       </Stack>
-
-      <Typography variant="h3">On Mobile</Typography>
-      <Breadcrumbs separator="•" aria-label="breadcrumb">
-        <Link underline="none" variant="body2" color="buttonDefault.main">
-          <LinkedInIcon /> Root
-        </Link>
-        <Link underline="none" variant="body2" color="buttonDefault.main">
-          <LinkedInIcon /> Link
-        </Link>
-        <Link underline="none" variant="body2" color="breadText.main">
-          <LinkedInIcon color="breadText.main" /> Current
-        </Link>
-      </Breadcrumbs>
-      <Button
-        variant="contained"
-        color="neutral"
-        sx={{ width: "fit-content" }}
-        onClick={handleButtonClick}
-      >
-        Action
-      </Button>
-    </Stack>
+    </Container>
   );
 };
 

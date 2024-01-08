@@ -12,6 +12,11 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import ListItemButton from "@mui/material/ListItemButton";
 import { Stack } from "@mui/material";
 
+import Masonry from "@mui/lab/Masonry";
+import Container from "@mui/material/Container";
+
+import ComponentBlock from "../component-block";
+
 const OPTIONS = [
   "Show some love to Material-UI",
   "Show all notification content",
@@ -92,135 +97,86 @@ export default function IconMenu() {
   }, []);
 
   return (
-    <Stack direction="row" gap={8}>
-      {/* Basic */}
-      <Box>
-        <Typography variant="h5" pb={5}>
-          Basic
-        </Typography>
+    <>
+      <Container sx={{ my: 10 }}>
+        <Masonry columns={{ xs: 1, md: 3 }} spacing={5}>
+          <ComponentBlock title="Basic">
+            <Button variant="outlined" onClick={handleOpen}>
+              Open Menu
+            </Button>
+            <Menu id="simple-menu" anchorEl={isOpen} onClose={handleClose} open={Boolean(isOpen)}>
+              {["Profile", "My account", "Logout"].map((option) => (
+                <MenuItem key={option} selected={option === "Profile"} onClick={handleClose}>
+                  {option}
+                </MenuItem>
+              ))}
+            </Menu>
+          </ComponentBlock>
 
-        <Button variant="outlined" onClick={handleOpen}>
-          Open Menu
-        </Button>
-        <Menu
-          id="simple-menu"
-          anchorEl={isOpen}
-          onClose={handleClose}
-          open={Boolean(isOpen)}
-        >
-          {["Profile", "My account", "Logout"].map((option) => (
-            <MenuItem
-              key={option}
-              selected={option === "Profile"}
-              onClick={handleClose}
+          <ComponentBlock title="Icon">
+            <Button variant="outlined" onClick={handleOpenIcon}>
+              Open Menu
+            </Button>
+            <Menu id="simple-menu" anchorEl={isOpenIcon} onClose={handleCloseIcon} open={Boolean(isOpenIcon)}>
+              {ICON.map((icon) => (
+                <MenuItem key={icon} onClick={handleCloseIcon}>
+                  {icon.icon}
+                  {icon.option}
+                </MenuItem>
+              ))}
+            </Menu>
+          </ComponentBlock>
+
+          {/* State */}
+          <ComponentBlock title="State">
+            <List component="nav" aria-label="Device settings">
+              <ListItemButton aria-haspopup="true" aria-controls="lock-menu" aria-label="when device is locked" onClick={handleClickListItem}>
+                <ListItemText primary="When device is locked" secondary={OPTIONS[selectedIndex]} />
+              </ListItemButton>
+            </List>
+
+            <Menu id="lock-menu" anchorEl={isOpenList} onClose={handleClose} open={Boolean(isOpenList)}>
+              {OPTIONS.map((option, index) => (
+                <MenuItem
+                  key={option}
+                  disabled={index === 0}
+                  selected={index === selectedIndex}
+                  onClick={(event) => handleMenuItemClick(event, index)}
+                >
+                  {option}
+                </MenuItem>
+              ))}
+            </Menu>
+          </ComponentBlock>
+
+          <ComponentBlock title="Icon">
+            <IconButton aria-label="more" aria-controls="long-menu" aria-haspopup="true" onClick={handleClick}>
+              <MoreVertIcon />
+            </IconButton>
+
+            <Menu
+              id="long-menu"
+              anchorEl={isOpenMaxHeight}
+              onClose={handleMaxHeightClose}
+              open={Boolean(isOpenMaxHeight)}
+              slotProps={{
+                paper: {
+                  sx: {
+                    width: "20ch",
+                    maxHeight: 48 * 4.5,
+                  },
+                },
+              }}
             >
-              {option}
-            </MenuItem>
-          ))}
-        </Menu>
-      </Box>
-
-      {/* Icon */}
-      <Box>
-        <Typography variant="h5" pb={5}>
-          Icon
-        </Typography>
-        <Button variant="outlined" onClick={handleOpenIcon}>
-          Open Menu
-        </Button>
-        <Menu
-          id="simple-menu"
-          anchorEl={isOpenIcon}
-          onClose={handleCloseIcon}
-          open={Boolean(isOpenIcon)}
-        >
-          {ICON.map((icon) => (
-            <MenuItem key={icon} onClick={handleCloseIcon}>
-              {icon.icon}
-              {icon.option}
-            </MenuItem>
-          ))}
-        </Menu>
-      </Box>
-
-      {/* State */}
-      <Box>
-        <Typography variant="h5" pb={5}>
-          State
-        </Typography>
-
-        <List component="nav" aria-label="Device settings">
-          <ListItemButton
-            aria-haspopup="true"
-            aria-controls="lock-menu"
-            aria-label="when device is locked"
-            onClick={handleClickListItem}
-          >
-            <ListItemText
-              primary="When device is locked"
-              secondary={OPTIONS[selectedIndex]}
-            />
-          </ListItemButton>
-        </List>
-
-        <Menu
-          id="lock-menu"
-          anchorEl={isOpenList}
-          onClose={handleClose}
-          open={Boolean(isOpenList)}
-        >
-          {OPTIONS.map((option, index) => (
-            <MenuItem
-              key={option}
-              disabled={index === 0}
-              selected={index === selectedIndex}
-              onClick={(event) => handleMenuItemClick(event, index)}
-            >
-              {option}
-            </MenuItem>
-          ))}
-        </Menu>
-      </Box>
-
-      {/* Scroll */}
-      <Box>
-        <Typography variant="h5" pb={5}>
-          Icon
-        </Typography>
-        <IconButton
-          aria-label="more"
-          aria-controls="long-menu"
-          aria-haspopup="true"
-          onClick={handleClick}
-        >
-          <MoreVertIcon />
-        </IconButton>
-
-        <Menu
-          id="long-menu"
-          anchorEl={isOpenMaxHeight}
-          onClose={handleMaxHeightClose}
-          open={Boolean(isOpenMaxHeight)}
-          slotProps={{
-            paper: {
-              sx: {
-                width: "20ch",
-                maxHeight: 48 * 4.5,
-              },
-            },
-          }}
-        >
-          {OPTIONS_MAXHEIGHT.map((option) => (
-            <MenuItem
-              key={option}
-              selected={option === "Pyxis"}
-              onClick={handleMaxHeightClose}
-            >
-              {option}
-            </MenuItem>
-          ))}
-        </Menu>
-      </Box>
-    </Stack>
+              {OPTIONS_MAXHEIGHT.map((option) => (
+                <MenuItem key={option} selected={option === "Pyxis"} onClick={handleMaxHeightClose}>
+                  {option}
+                </MenuItem>
+              ))}
+            </Menu>
+          </ComponentBlock>
+        </Masonry>
+      </Container>
+    </>
   );
 }

@@ -24,16 +24,12 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import SettingsIcon from "@mui/icons-material/Settings";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { motion, useScroll, useSpring } from "framer-motion";
+import Masonry from "@mui/lab/Masonry";
+import Container from "@mui/material/Container";
+
+import ComponentBlock from "../component-block";
 
 export default function BasicList() {
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
-
   const [open, setOpen] = React.useState(true);
 
   const handleClick = () => {
@@ -57,113 +53,135 @@ export default function BasicList() {
 
   return (
     <>
-      <motion.div className="progress-bar" style={{ scaleX }} />
+      <Container sx={{ my: 10 }}>
+        <Masonry columns={{ xs: 1, md: 2 }} spacing={5}>
+          <ComponentBlock title="Simple">
+            <List dense>
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemText primary="List Item" />
+                </ListItemButton>
+              </ListItem>
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemText primary="List Item" />
+                </ListItemButton>
+              </ListItem>
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemText primary="List Item" />
+                </ListItemButton>
+              </ListItem>
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemText primary="List Item" />
+                </ListItemButton>
+              </ListItem>
+            </List>
+          </ComponentBlock>
 
-      <Stack gap={5}>
-        <Box display="flex" gap={8}>
-          <Box
-            sx={{
-              width: "100%",
-              maxWidth: 360,
-              bgcolor: "background.paper",
-            }}
-          >
-            <nav aria-label="main mailbox folders">
-              <List dense>
-                <ListItem disablePadding>
-                  <ListItemButton>
-                    <ListItemText primary="List Item" />
-                  </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
-                  <ListItemButton>
-                    <ListItemText primary="List Item" />
-                  </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
-                  <ListItemButton>
-                    <ListItemText primary="List Item" />
-                  </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
-                  <ListItemButton>
-                    <ListItemText primary="List Item" />
-                  </ListItemButton>
-                </ListItem>
-              </List>
-            </nav>
-          </Box>
+          <ComponentBlock title="Simple">
+            <Box
+              sx={{
+                width: "100%",
+                bgcolor: "background.paper",
+              }}
+            >
+              <nav aria-label="main mailbox folders">
+                <List dense>
+                  <ListItem disablePadding>
+                    <ListItemButton>
+                      <ListItemIcon>
+                        <SettingsIcon />
+                      </ListItemIcon>
+                      <ListItemText primary="List Item" />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem disablePadding>
+                    <ListItemButton>
+                      <ListItemIcon>
+                        <NotificationsIcon />
+                      </ListItemIcon>
+                      <ListItemText primary="List Item" />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem disablePadding>
+                    <ListItemButton>
+                      <ListItemIcon>
+                        <GroupIcon />
+                      </ListItemIcon>
+                      <ListItemText primary="List Item" />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem disablePadding>
+                    <ListItemButton>
+                      <ListItemIcon>
+                        <ShoppingCartIcon />
+                      </ListItemIcon>
+                      <ListItemText primary="List Item" />
+                    </ListItemButton>
+                  </ListItem>
+                </List>
+              </nav>
+              <Divider variant="fullWidth" />
+              <nav aria-label="secondary mailbox folders">
+                <List dense>
+                  <ListItem disablePadding>
+                    <ListItemButton>
+                      <ListItemText primary="List Item" />
+                    </ListItemButton>
+                  </ListItem>
+                  <ListItem disablePadding>
+                    <ListItemButton component="a" href="#simple-list">
+                      <ListItemText primary="List Item" />
+                    </ListItemButton>
+                  </ListItem>
+                </List>
+              </nav>
+            </Box>
+          </ComponentBlock>
 
-          <Box
-            sx={{
-              width: "100%",
-              maxWidth: 360,
-              bgcolor: "background.paper",
-            }}
-          >
-            <nav aria-label="main mailbox folders">
-              <List dense>
-                <ListItem disablePadding>
-                  <ListItemButton>
-                    <ListItemIcon>
-                      <SettingsIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="List Item" />
-                  </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
-                  <ListItemButton>
-                    <ListItemIcon>
-                      <NotificationsIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="List Item" />
-                  </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
-                  <ListItemButton>
-                    <ListItemIcon>
-                      <GroupIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="List Item" />
-                  </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
-                  <ListItemButton>
+          <ComponentBlock title="Nested">
+            <List component="nav" aria-labelledby="nested-list-subheader">
+              <ListItemButton dense>
+                <ListItemIcon>
+                  <SettingsIcon />
+                </ListItemIcon>
+                <ListItemText primary="List Item" />
+              </ListItemButton>
+              <ListItemButton dense>
+                <ListItemIcon>
+                  <NotificationsIcon />
+                </ListItemIcon>
+                <ListItemText primary="List Item" />
+              </ListItemButton>
+              <ListItemButton onClick={handleClick} dense>
+                <ListItemIcon>
+                  <GroupIcon />
+                </ListItemIcon>
+                <ListItemText primary="List Item" />
+                {open ? <ExpandLess /> : <ExpandMore />}
+              </ListItemButton>
+              <Collapse in={open} timeout="auto" unmountOnExit>
+                <List component="div" disablePadding>
+                  <ListItemButton sx={{ pl: 4 }} dense>
                     <ListItemIcon>
                       <ShoppingCartIcon />
                     </ListItemIcon>
                     <ListItemText primary="List Item" />
                   </ListItemButton>
-                </ListItem>
-              </List>
-            </nav>
-            <Divider variant="fullWidth" />
-            <nav aria-label="secondary mailbox folders">
-              <List dense>
-                <ListItem disablePadding>
-                  <ListItemButton>
+                  <ListItemButton sx={{ pl: 4 }} dense>
+                    <ListItemIcon>
+                      <ShoppingCartIcon />
+                    </ListItemIcon>
                     <ListItemText primary="List Item" />
                   </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
-                  <ListItemButton component="a" href="#simple-list">
-                    <ListItemText primary="List Item" />
-                  </ListItemButton>
-                </ListItem>
-              </List>
-            </nav>
-          </Box>
-        </Box>
+                </List>
+              </Collapse>
+            </List>
+          </ComponentBlock>
 
-        <Typography variant="h4">Controls</Typography>
-        <Box display="flex">
-          <Box
-            sx={{
-              width: "100%",
-              maxWidth: 360,
-              bgcolor: "background.paper",
-            }}
-          >
+          <ComponentBlock title="Controls">
             <List dense>
               <ListItem disablePadding>
                 <ListItemButton>
@@ -202,18 +220,15 @@ export default function BasicList() {
                 </ListItemButton>
               </ListItem>
             </List>
-          </Box>
+          </ComponentBlock>
 
-          <Box pl={8} sx={{ bgcolor: "background.paper" }}>
+          <ComponentBlock title="Switch">
             <List>
-              <ListItem dense sx={{ width: 400 }}>
+              <ListItem dense>
                 <ListItemIcon>
                   <SettingsIcon />
                 </ListItemIcon>
-                <ListItemText
-                  id="switch-list-label-setting"
-                  primary="Setting"
-                />
+                <ListItemText id="switch-list-label-setting" primary="Setting" />
                 <Switch
                   edge="end"
                   onChange={handleToggle("setting")}
@@ -227,10 +242,7 @@ export default function BasicList() {
                 <ListItemIcon>
                   <NotificationsIcon />
                 </ListItemIcon>
-                <ListItemText
-                  id="switch-list-label-bluetooth"
-                  primary="Bluetooth"
-                />
+                <ListItemText id="switch-list-label-bluetooth" primary="Bluetooth" />
                 <Switch
                   edge="end"
                   onChange={handleToggle("bluetooth")}
@@ -258,131 +270,61 @@ export default function BasicList() {
                 <ListItemIcon>
                   <ShoppingCartIcon />
                 </ListItemIcon>
-                <ListItemText
-                  id="switch-list-label-shopping"
-                  primary="List Item"
-                />
+                <ListItemText id="switch-list-label-shopping" primary="List Item" />
               </ListItem>
             </List>
-          </Box>
-        </Box>
+          </ComponentBlock>
 
-        {/* Avatar & Secondary Text */}
-        <List
-          sx={{ width: "25%" }}
-          subheader={
-            <ListSubheader component="div" id="avatar-list-subheader">
-              Avatar & Secondary Text
-            </ListSubheader>
-          }
-        >
-          <ListItem dense>
-            <ListItemAvatar>
-              <Avatar>
-                <FaceIcon />
-              </Avatar>
-            </ListItemAvatar>
-            <ListItemText
-              primary="Mireya Conner"
-              secondary="louie.kuphal39@gmail.com"
-            />
-            <ListItemIcon>
-              <CallIcon />
-            </ListItemIcon>
-          </ListItem>
-          <ListItem dense>
-            <ListItemAvatar>
-              <Avatar>
-                <FaceIcon />
-              </Avatar>
-            </ListItemAvatar>
-            <ListItemText
-              primary="Amiah Pruitt"
-              secondary="tyrel_greenholt@gmail.com"
-            />
-            <ListItemIcon>
-              <CallIcon />
-            </ListItemIcon>
-          </ListItem>
-          <ListItem dense>
-            <ListItemAvatar>
-              <Avatar>
-                <FaceIcon />
-              </Avatar>
-            </ListItemAvatar>
-            <ListItemText
-              primary="Angelique Morse"
-              secondary="joana.simonis84@gmail.com"
-            />
-            <ListItemIcon>
-              <CallIcon />
-            </ListItemIcon>
-          </ListItem>
-          <ListItem dense>
-            <ListItemAvatar>
-              <Avatar>
-                <FaceIcon />
-              </Avatar>
-            </ListItemAvatar>
-            <ListItemText
-              primary="Harrison Stein"
-              secondary="letha_lubowitz24@yahoo.com"
-            />
-            <ListItemIcon>
-              <CallIcon />
-            </ListItemIcon>
-          </ListItem>
-        </List>
-
-        {/* Nested List item */}
-        <Box sx={{ width: "15%", bgcolor: "background.paper" }}>
-          <List
-            component="nav"
-            aria-labelledby="nested-list-subheader"
-            subheader={
-              <ListSubheader component="div" id="nested-list-subheader">
-                Nested List Items
-              </ListSubheader>
-            }
-          >
-            <ListItemButton dense>
-              <ListItemIcon>
-                <SettingsIcon />
-              </ListItemIcon>
-              <ListItemText primary="List Item" />
-            </ListItemButton>
-            <ListItemButton dense>
-              <ListItemIcon>
-                <NotificationsIcon />
-              </ListItemIcon>
-              <ListItemText primary="List Item" />
-            </ListItemButton>
-            <ListItemButton onClick={handleClick} dense>
-              <ListItemIcon>
-                <GroupIcon />
-              </ListItemIcon>
-              <ListItemText primary="List Item" />
-              {open ? <ExpandLess /> : <ExpandMore />}
-            </ListItemButton>
-            <Collapse in={open} timeout="auto" unmountOnExit>
-              <List component="div" disablePadding>
-                <ListItemButton sx={{ pl: 4 }} dense>
-                  <ListItemIcon>
-                    <ShoppingCartIcon />
-                  </ListItemIcon>
-                  <ListItemText primary="List Item" />
-                </ListItemButton>
-                <ListItemButton sx={{ pl: 4 }} dense>
-                  <ListItemIcon>
-                    <ShoppingCartIcon />
-                  </ListItemIcon>
-                  <ListItemText primary="List Item" />
-                </ListItemButton>
-              </List>
-            </Collapse>
-          </List>
-        </Box>
-      </Stack>
+          <ComponentBlock title="Avatar & Secondary Text">
+            <List>
+              <ListItem dense>
+                <ListItemAvatar>
+                  <Avatar>
+                    <FaceIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText primary="Mireya Conner" secondary="louie.kuphal39@gmail.com" />
+                <ListItemIcon>
+                  <CallIcon />
+                </ListItemIcon>
+              </ListItem>
+              <ListItem dense>
+                <ListItemAvatar>
+                  <Avatar>
+                    <FaceIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText primary="Amiah Pruitt" secondary="tyrel_greenholt@gmail.com" />
+                <ListItemIcon>
+                  <CallIcon />
+                </ListItemIcon>
+              </ListItem>
+              <ListItem dense>
+                <ListItemAvatar>
+                  <Avatar>
+                    <FaceIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText primary="Angelique Morse" secondary="joana.simonis84@gmail.com" />
+                <ListItemIcon>
+                  <CallIcon />
+                </ListItemIcon>
+              </ListItem>
+              <ListItem dense>
+                <ListItemAvatar>
+                  <Avatar>
+                    <FaceIcon />
+                  </Avatar>
+                </ListItemAvatar>
+                <ListItemText primary="Harrison Stein" secondary="letha_lubowitz24@yahoo.com" />
+                <ListItemIcon>
+                  <CallIcon />
+                </ListItemIcon>
+              </ListItem>
+            </List>
+          </ComponentBlock>
+        </Masonry>
+      </Container>
     </>
   );
 }
