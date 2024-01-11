@@ -1,7 +1,8 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
-import { Stack, Typography } from "@mui/material";
+import Container from "@mui/material/Container";
+import Masonry from "@mui/lab/Masonry";
+import ComponentBlock from "../component-block";
 
 const marks = [
   {
@@ -28,127 +29,114 @@ function valuetext(value) {
 
 export default function SliderSizes() {
   return (
-    <Box sx={{ width: 300 }} gap={5} display="flex" flexDirection="column">
-      <Stack spacing={5}>
-        <Typography variant="h4">Base</Typography>
-        <Slider
-          defaultValue={50}
-          aria-label="Default"
-          valueLabelDisplay="auto"
-        />
+    <Container sx={{ my: 10 }}>
+      <Masonry columns={{ xs: 1, md: 3 }} spacing={3}>
+        <ComponentBlock title="Base">
+          <Slider defaultValue={50} aria-label="Default" valueLabelDisplay="auto" />
+          <Slider track="inverted" aria-labelledby="track-inverted-range-slider" getAriaValueText={valuetext} defaultValue={[20, 80]} />
+        </ComponentBlock>
 
-        <Slider
-          track="inverted"
-          aria-labelledby="track-inverted-range-slider"
-          getAriaValueText={valuetext}
-          defaultValue={[20, 80]}
-        />
-      </Stack>
+        <ComponentBlock title="Mark">
+          <Slider
+            aria-label="Temperature"
+            defaultValue={30}
+            getAriaValueText={valuetext}
+            valueLabelDisplay="off"
+            step={10}
+            marks
+            min={10}
+            max={110}
+          />
+          <Slider
+            track="inverted"
+            aria-labelledby="track-inverted-range-slider"
+            defaultValue={[30, 80]}
+            getAriaValueText={valuetext}
+            valueLabelDisplay="off"
+            step={10}
+            marks
+            min={10}
+            max={100}
+          />
+        </ComponentBlock>
 
-      <Stack spacing={5}>
-        <Typography variant="h4">Marks</Typography>
-        <Slider
-          aria-label="Temperature"
-          defaultValue={30}
-          getAriaValueText={valuetext}
-          valueLabelDisplay="off"
-          step={10}
-          marks
-          min={10}
-          max={110}
-        />
-        <Slider
-          track="inverted"
-          aria-labelledby="track-inverted-range-slider"
-          defaultValue={[30, 80]}
-          getAriaValueText={valuetext}
-          valueLabelDisplay="off"
-          step={10}
-          marks
-          min={10}
-          max={100}
-        />
-      </Stack>
+        <ComponentBlock title="Size">
+          <Slider
+            track="inverted"
+            aria-labelledby="track-inverted-range-slider"
+            defaultValue={[30, 80]}
+            getAriaValueText={valuetext}
+            valueLabelDisplay="auto"
+            step={10}
+            marks
+            min={10}
+            max={100}
+            size="small"
+          />
+          <Slider
+            track="inverted"
+            aria-labelledby="track-inverted-range-slider"
+            defaultValue={[30, 80]}
+            getAriaValueText={valuetext}
+            valueLabelDisplay="auto"
+            step={10}
+            marks
+            min={10}
+            max={100}
+          />
+        </ComponentBlock>
 
-      <Stack gap={8}>
-        <Typography variant="h4">State</Typography>
-        <Slider
-          disabled
-          aria-label="Temperature"
-          defaultValue={30}
-          getAriaValueText={valuetext}
-          valueLabelDisplay="off"
-          step={10}
-          marks
-          min={10}
-          max={110}
-        />
-        <Slider
-          disabled
-          track="inverted"
-          aria-labelledby="track-inverted-range-slider"
-          defaultValue={[30, 80]}
-          getAriaValueText={valuetext}
-          valueLabelDisplay="off"
-          step={10}
-          marks
-          min={10}
-          max={100}
-        />
-      </Stack>
+        <ComponentBlock title="Disabled">
+          <Slider
+            disabled
+            aria-label="Temperature"
+            defaultValue={30}
+            getAriaValueText={valuetext}
+            valueLabelDisplay="off"
+            step={10}
+            marks
+            min={10}
+            max={110}
+          />
+          <Slider
+            disabled
+            track="inverted"
+            aria-labelledby="track-inverted-range-slider"
+            defaultValue={[30, 80]}
+            getAriaValueText={valuetext}
+            valueLabelDisplay="off"
+            step={10}
+            marks
+            min={10}
+            max={100}
+          />
+        </ComponentBlock>
 
-      <Stack gap={8}>
-        <Typography variant="h4">State</Typography>
-        <Slider
-          track="inverted"
-          aria-labelledby="track-inverted-range-slider"
-          defaultValue={[30, 80]}
-          getAriaValueText={valuetext}
-          valueLabelDisplay="auto"
-          step={10}
-          marks
-          min={10}
-          max={100}
-        />
-        <Slider
-          track="inverted"
-          aria-labelledby="track-inverted-range-slider"
-          defaultValue={[30, 80]}
-          getAriaValueText={valuetext}
-          valueLabelDisplay="auto"
-          step={10}
-          marks
-          min={10}
-          max={100}
-        />
-      </Stack>
-
-      <Stack gap={8}>
-        <Typography variant="h4">Size</Typography>
-        <Slider
-          track="inverted"
-          aria-labelledby="track-inverted-range-slider"
-          defaultValue={[30, 80]}
-          getAriaValueText={valuetext}
-          valueLabelDisplay="auto"
-          step={10}
-          marks
-          min={10}
-          max={100}
-          size="small"
-        />
-        <Slider
-          track="inverted"
-          aria-labelledby="track-inverted-range-slider"
-          defaultValue={[30, 80]}
-          getAriaValueText={valuetext}
-          valueLabelDisplay="auto"
-          step={10}
-          marks
-          min={10}
-          max={100}
-        />
-      </Stack>
-    </Box>
+        <ComponentBlock title="State">
+          <Slider
+            track="inverted"
+            aria-labelledby="track-inverted-range-slider"
+            defaultValue={[30, 80]}
+            getAriaValueText={valuetext}
+            valueLabelDisplay="auto"
+            step={10}
+            marks
+            min={10}
+            max={100}
+          />
+          <Slider
+            track="inverted"
+            aria-labelledby="track-inverted-range-slider"
+            defaultValue={[30, 80]}
+            getAriaValueText={valuetext}
+            valueLabelDisplay="auto"
+            step={10}
+            marks
+            min={10}
+            max={100}
+          />
+        </ComponentBlock>
+      </Masonry>
+    </Container>
   );
 }

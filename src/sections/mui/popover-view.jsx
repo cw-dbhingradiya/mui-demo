@@ -1,7 +1,10 @@
 import * as React from "react";
 import Popover from "@mui/material/Popover";
-import { Typography, Box } from "@mui/material";
+import { Typography } from "@mui/material";
 import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+
+import ComponentBlock from "../component-block";
 
 export default function BasicPopover() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -18,19 +21,9 @@ export default function BasicPopover() {
   const id = open ? "simple-popover" : undefined;
 
   return (
-    <div>
-      <Box
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-        height="80vh"
-      >
-        <Button
-          aria-describedby={id}
-          variant="contained"
-          color="buttonDefault"
-          onClick={handleClick}
-        >
+    <Container>
+      <ComponentBlock>
+        <Button aria-describedby={id} variant="contained" color="buttonDefault" onClick={handleClick}>
           Object
         </Button>
         <Popover
@@ -49,7 +42,7 @@ export default function BasicPopover() {
         >
           <Typography sx={{ p: 2 }}>The content of the Popover.</Typography>
         </Popover>
-      </Box>
-    </div>
+      </ComponentBlock>
+    </Container>
   );
 }

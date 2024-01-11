@@ -4,7 +4,7 @@ import { paramCase, snakeCase } from "../utils/change-case";
 
 const getHref = (category, name) => `/${category}/${paramCase(name)}`;
 
-export const foundationNav = ["Colors", "Typography", "Grid"].map((name) => ({
+export const foundationNav = ["Colors", "Typography", "Shadows", "Grid"].map((name) => ({
   name,
   href: getHref("foundation", name),
   icon: `/assets/components/ic_${snakeCase(name)}.svg`,

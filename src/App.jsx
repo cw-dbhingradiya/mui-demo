@@ -1,5 +1,5 @@
 import React from "react";
-import { ThemeProvider, createTheme, Typography, css, FormControlLabel, Switch } from "@mui/material";
+import { ThemeProvider, createTheme, css, FormControlLabel, Switch } from "@mui/material";
 import Home from "./pages/home";
 import { borderRadius } from "@mui/system";
 import { fontWeight } from "@mui/system";
@@ -10,37 +10,38 @@ import { deepmerge } from "@mui/utils";
 import { components } from "./theme/override/index";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 
-import WithSx from "./Components/WithSx";
-import TypographyFont from "./Components/TypographyFont";
-import GridFile from "./Components/GridFile";
-import Accordion from "./Components/Accordion";
-import Alert from "./Components/Alert";
-import Avatar from "./Components/Avatar";
-import Badge from "./Components/Badge";
-import BreadCrumb from "./Components/BreadCrumb";
-import Buttons from "./Components/Buttons";
-import CheckBox from "./Components/CheckBox";
-import Chip from "./Components/Chip";
-import Dialog from "./Components/Dialog";
-import List from "./Components/List";
-import Menu from "./Components/Menu";
-import Pagination from "./Components/Pagination";
-import Pickers from "./Components/Pickers";
-import Popover from "./Components/Popover";
-import Progress from "./Components/Progress";
-import RadioButton from "./Components/RadioButton";
-import Rating from "./Components/Rating";
-import Slider from "./Components/Slider";
-import Stepper from "./Components/Stepper";
-import Switchs from "./Components/Switchs";
-import Table from "./Components/Table";
-import Tab from "./Components/Tab";
-import Textfield from "./Components/Textfield";
-import TimeLine from "./Components/TimeLine";
-import Tooltip from "./Components/Tooltip";
-import Upload from "./Components/Upload";
-import Snackbar from "./Components/Snackbar";
-import Carousel from "./Components/Carousel";
+import Color from "./Components/foundation/Color";
+import TypographyFont from "./Components/foundation/TypographyFont";
+import Shadows from "./Components/foundation/shadows";
+import GridFile from "./Components/mui/GridFile";
+import Accordion from "./Components/mui/Accordion";
+import Alert from "./Components/mui/Alert";
+import Avatar from "./Components/mui/Avatar";
+import Badge from "./Components/mui/Badge";
+import BreadCrumb from "./Components/mui/BreadCrumb";
+import Buttons from "./Components/mui/Buttons";
+import CheckBox from "./Components/mui/CheckBox";
+import Chip from "./Components/mui/Chip";
+import Dialog from "./Components/mui/Dialog";
+import List from "./Components/mui/List";
+import Menu from "./Components/mui/Menu";
+import Pagination from "./Components/mui/Pagination";
+import Pickers from "./Components/mui/Pickers";
+import Popover from "./Components/mui/Popover";
+import Progress from "./Components/mui/Progress";
+import RadioButton from "./Components/mui/RadioButton";
+import Rating from "./Components/mui/Rating";
+import Slider from "./Components/mui/Slider";
+import Stepper from "./Components/mui/Stepper";
+import Switchs from "./Components/mui/Switchs";
+import Table from "./Components/mui/Table";
+import Tab from "./Components/mui/Tab";
+import Textfield from "./Components/mui/Textfield";
+import TimeLine from "./Components/mui/TimeLine";
+import Tooltip from "./Components/mui/Tooltip";
+import Upload from "./Components/extra/Upload";
+import Snackbar from "./Components/extra/Snackbar";
+import Carousel from "./Components/extra/Carousel";
 
 const App = () => {
   const [darkMode, setDarkMode] = React.useState(false);
@@ -65,8 +66,9 @@ const App = () => {
         <CssBaseline />
         <FormControlLabel control={<Switch checked={darkMode} onChange={handleThemeChange} />} label="Dark Mode" />
         <Routes>
-          <Route path="foundation/colors" element={<WithSx />} />
+          <Route path="foundation/colors" element={<Color />} />
           <Route path="foundation/typography" element={<TypographyFont />} />
+          <Route path="foundation/shadows" element={<Shadows />} />
           <Route path="foundation/grid" element={<GridFile />} />
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />

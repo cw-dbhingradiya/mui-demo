@@ -1,6 +1,7 @@
 import { createTheme } from "@material-ui/core/styles";
 import { Box } from "@material-ui/core";
 import { commonColor } from "./color";
+import { customShadows } from "./custom-shadows";
 import { deepmerge } from "@mui/utils";
 
 export const theme = (palette) => ({
