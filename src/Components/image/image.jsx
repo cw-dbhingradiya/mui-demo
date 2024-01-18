@@ -68,9 +68,6 @@ const Image = forwardRef(
         effect={disabledEffect ? undefined : effect}
         useIntersectionObserver={useIntersectionObserver}
         wrapperClassName={wrapperClassName || "component-image-wrapper"}
-        placeholderSrc={
-          disabledEffect ? "/assets/transparent.png" : "/assets/placeholder.svg"
-        }
         //
         sx={{
           width: 1,
@@ -128,17 +125,7 @@ Image.propTypes = {
   disabledEffect: PropTypes.bool,
   effect: PropTypes.string,
   overlay: PropTypes.string,
-  ratio: PropTypes.oneOf([
-    "4/3",
-    "3/4",
-    "6/4",
-    "4/6",
-    "16/9",
-    "9/16",
-    "21/9",
-    "9/21",
-    "1/1",
-  ]),
+  ratio: PropTypes.oneOf(["4/3", "3/4", "6/4", "4/6", "16/9", "9/16", "21/9", "9/21", "1/1"]),
   scrollPosition: PropTypes.object,
   src: PropTypes.string,
   sx: PropTypes.object,

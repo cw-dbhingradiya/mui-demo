@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { ThemeProvider, createTheme, css, FormControlLabel, Switch } from "@mui/material";
 import Home from "./pages/home";
 import { borderRadius } from "@mui/system";
@@ -43,8 +44,15 @@ import Upload from "./Components/extra/Upload";
 import Snackbar from "./Components/extra/Snackbar";
 import Carousel from "./Components/extra/Carousel";
 
+import ParentComponent from "./sections/mui/ParentComponent";
+
+import Topbar from "./scenes/global/Topbar";
+import Sidebar from "./scenes/global/Sidebar";
+import Dashboard from "./scenes/dashboard";
+
 const App = () => {
   const [darkMode, setDarkMode] = React.useState(false);
+  const [isSidebar, setIsSidebar] = useState(true);
 
   const handleThemeChange = () => {
     setDarkMode(!darkMode);
@@ -63,9 +71,9 @@ const App = () => {
   return (
     <BrowserRouter>
       <ThemeProvider theme={createTheme(selectedTheme)}>
-        <CssBaseline />
-        <FormControlLabel control={<Switch checked={darkMode} onChange={handleThemeChange} />} label="Dark Mode" />
-        <Routes>
+        {/* <CssBaseline />
+        <FormControlLabel control={<Switch checked={darkMode} onChange={handleThemeChange} />} label="Dark Mode" /> */}
+        {/* <Routes>
           <Route path="foundation/colors" element={<Color />} />
           <Route path="foundation/typography" element={<TypographyFont />} />
           <Route path="foundation/shadows" element={<Shadows />} />
@@ -100,7 +108,18 @@ const App = () => {
           <Route path="extra/upload" element={<Upload />} />
           <Route path="extra/snackbar" element={<Snackbar />} />
           <Route path="extra/carousel" element={<Carousel />} />
-        </Routes>
+        </Routes> */}
+
+        <div className="app">
+          <Sidebar isSidebar={isSidebar} />
+          <main className="content">
+            <Topbar setIsSidebar={setIsSidebar} />
+            <Routes>
+              <Route path="/" element={<Dashboard />} />
+            </Routes>
+          </main>
+        </div>
+
         {/* <Outlet /> */}
       </ThemeProvider>
     </BrowserRouter>
