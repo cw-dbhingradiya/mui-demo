@@ -128,12 +128,53 @@ body,
 }
 
 .app {
+  /* display: flex;
+  position: relative; */
+}
+
+.content {
   display: flex;
-  position: relative;
+  min-height: 100%;
+}
+
+.pro-sidebar {
+  flex-shrink: 0;
+  width: 280px;
+  min-width: auto;
+  border-right: dashed 1px rgba(145, 158, 171, 0.2);
+}
+
+.pro-sidebar > .pro-sidebar-inner > .pro-sidebar-layout ul {
+  margin: 10px;
+}
+
+.pro-sidebar .pro-menu .pro-menu-item {
+  color: #000 !important;
+  margin-bottom: 5px;
+}
+
+.collapsed .pro-menu-item .pro-inner-item {
+  padding: 5px 12px !important;
 }
 
 .pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item:hover .pro-icon-wrapper .pro-icon {
   animation: none;
+}
+
+.pro-item-content button {
+  font-size: 1.125rem;
+  padding: 4px;
+  top: 32px;
+  position: fixed;
+  left: 268px;
+  z-index: 1101;
+  border: dashed 1px rgba(145, 158, 171, 0.2);
+  backdrop-filter: blur(6px);
+}
+
+.pro-item-content button svg {
+  width: 16px;
+  height: 16px;
 }
 
 ::-webkit-scrollbar {
@@ -147,10 +188,28 @@ body,
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #d7d7d7;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #8b8b8b;
+}
+
+.pro-sidebar.collapsed .pro-menu .pro-menu-item:first-child > .pro-inner-item > .pro-icon-wrapper .pro-icon .css-1yagxpu-MuiSvgIcon-root {
+  font-size: 1.125rem;
+  padding: 4px;
+  top: 32px;
+  position: fixed;
+  left: 68px;
+  z-index: 1101;
+  border: dashed 1px rgba(145, 158, 171, 0.2);
+  backdrop-filter: blur(6px);
+  height: auto;
+  border-radius: 50%;
+}
+
+.css-nr0ei8-MuiGrid2-root {
+  --Grid-columnSpacing: 24px !important;
+  --Grid-rowSpacing: 24px !important;
 }

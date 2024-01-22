@@ -111,9 +111,9 @@ const App = () => {
         </Routes> */}
 
         <div className="app">
-          <Sidebar isSidebar={isSidebar} />
+          <Topbar setIsSidebar={setIsSidebar} />
           <main className="content">
-            <Topbar setIsSidebar={setIsSidebar} />
+            <Sidebar isSidebar={isSidebar} />
             <Routes>
               <Route path="/" element={<Dashboard />} />
             </Routes>
