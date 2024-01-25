@@ -39,6 +39,10 @@ import CardTable from "./CardTable";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Unstable_Grid2";
 
+import TableThird from "./TableThird";
+import LineChart from "./LineChart";
+import DonutChart from "./DonutChart";
+
 const bull = (
   <Box component="span" sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}>
     •
@@ -105,8 +109,9 @@ export default function BasicCard() {
 
   return (
     <>
-      <Grid container spacing={3}>
-        <Grid xs={12} md={8}>
+      <Container sx={{ maxWidth: "1536px !important" }}>
+        <Grid container spacing={3}>
+          {/* <Grid xs={12} md={8}>
           <Card elevation={24}>
             <CardContent>
               <Typography variant="subtitle2" gutterBottom>
@@ -205,577 +210,595 @@ export default function BasicCard() {
               </Timeline>
             </CardContent>
           </Card>
-        </Grid>
+        </Grid> */}
 
-        <Grid xs={12} md={4}>
-          <Card elevation={24}>
-            <CardContent>
-              <Typography variant="h6" gutterBottom>
-                Top Related Applications
-              </Typography>
-              <Stack gap={5}>
-                <Stack direction="row" justifyContent="space-between" alignItems="center">
-                  <Stack direction="row" alignItems="center" gap={3}>
-                    <Avatar
-                      variant="rounded"
-                      sx={{
-                        bgcolor: "grey.200",
-                        color: "#000",
-                        borderRadius: 3,
-                        width: 48,
-                        height: 48,
-                      }}
-                    >
-                      <GoogleIcon />
-                    </Avatar>
-                    <Box>
-                      <Typography variant="subtitle2">Chrome</Typography>
-                      <Box display="flex" alignItems="center">
-                        <Typography variant="caption" color="text.secondary" display="flex" alignItems="center">
-                          <AppleIcon sx={{ fontSize: 14, marginRight: 1 }} />
-                          Mac
-                        </Typography>
-                        <Button
-                          variant="text"
-                          color="primary"
-                          size="small"
-                          sx={{
-                            width: 38,
-                            minWidth: 38,
-                            height: 24,
-                            backgroundColor: "#22C55E29",
-                            marginLeft: 1,
-                          }}
-                        >
-                          Free
-                        </Button>
-                      </Box>
-                    </Box>
-                  </Stack>
-                  <Box lineHeight="normal">
-                    <Rating
-                      sx={{ fontSize: 16 }}
-                      name="text-feedback"
-                      value={2}
-                      readOnly
-                      emptyIcon={<StarIcon style={{ opacity: 0.55, fontSize: 16 }} />}
-                    />
-                    <Typography variant="caption" color="text.secondary">
-                      73.9k reviews
+          <Grid xs={12} md={8}>
+            <Card elevation={24}>
+              <CardContent
+                sx={{
+                  position: "relative",
+                  background: "linear-gradient(135deg, rgba(91, 228, 155, 0.2), rgba(0, 167, 111, 0.2))",
+                  borderRadius: "16px",
+                  color: "#004B50",
+                  backgroundColor: "#FFFFFF",
+                  padding: "0 !important",
+                }}
+              >
+                <Stack direction="row" justifyContent="space-between">
+                  <Box p={10}>
+                    <Typography variant="h4" sx={{ lineHeight: 1.4 }} mb={4}>
+                      Welcome back 👋 <br /> Jaydon Frankie
                     </Typography>
-                  </Box>
-                </Stack>
-
-                <Stack direction="row" justifyContent="space-between" alignItems="center">
-                  <Stack direction="row" alignItems="center" gap={3}>
-                    <Avatar
-                      variant="rounded"
-                      sx={{
-                        bgcolor: "grey.200",
-                        color: "#000",
-                        borderRadius: 3,
-                        width: 48,
-                        height: 48,
-                      }}
-                    >
-                      <AddToDriveIcon />
-                    </Avatar>
-                    <Box>
-                      <Typography variant="subtitle2">Drive</Typography>
-                      <Box display="flex" alignItems="center">
-                        <Typography variant="caption" color="text.secondary" display="flex" alignItems="center">
-                          <AppleIcon sx={{ fontSize: 14, marginRight: 1 }} />
-                          Mac
-                        </Typography>
-                        <Button
-                          variant="text"
-                          color="primary"
-                          size="small"
-                          sx={{
-                            width: 38,
-                            minWidth: 38,
-                            height: 24,
-                            backgroundColor: "#22C55E29",
-                            marginLeft: 1,
-                          }}
-                        >
-                          Free
-                        </Button>
-                      </Box>
-                    </Box>
-                  </Stack>
-                  <Box lineHeight="normal">
-                    <Rating
-                      sx={{ fontSize: 16 }}
-                      name="text-feedback"
-                      value={1}
-                      readOnly
-                      emptyIcon={<StarIcon style={{ opacity: 0.55, fontSize: 16 }} />}
-                    />
-                    <Typography variant="caption" color="text.secondary">
-                      50.1k reviews
+                    <Typography variant="body2" color="text.secondary" sx={{ margin: "0 0 40px 0", opacity: "0.8", maxWidth: "360px" }}>
+                      If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything.
                     </Typography>
+                    <Button color="primary" variant="contained">
+                      Go Now
+                    </Button>
                   </Box>
+                  <img src={cardImg} style={{ padding: "24px" }} alt="mastercard" />
                 </Stack>
+              </CardContent>
+            </Card>
+          </Grid>
 
-                <Stack direction="row" justifyContent="space-between" alignItems="center">
-                  <Stack direction="row" alignItems="center" gap={3}>
-                    <Avatar
-                      variant="rounded"
-                      sx={{
-                        bgcolor: "grey.200",
-                        color: "#000",
-                        borderRadius: 3,
-                        width: 48,
-                        height: 48,
-                      }}
-                    >
-                      <GoogleIcon />
-                    </Avatar>
-                    <Box>
-                      <Typography variant="subtitle2">Dropbox</Typography>
-                      <Box display="flex" alignItems="center">
-                        <Typography variant="caption" color="text.secondary" display="flex" alignItems="center">
-                          <AppleIcon sx={{ fontSize: 14, marginRight: 1 }} />
-                          Mac
-                        </Typography>
-                        <Button
-                          variant="text"
-                          color="error"
-                          size="small"
-                          sx={{
-                            width: 38,
-                            minWidth: 38,
-                            height: 24,
-                            backgroundColor: "#FF563029",
-                            marginLeft: 1,
-                          }}
-                        >
-                          $15
-                        </Button>
-                      </Box>
-                    </Box>
-                  </Stack>
-                  <Box lineHeight="normal">
-                    <Rating
-                      sx={{ fontSize: 16 }}
-                      name="text-feedback"
-                      value={3}
-                      readOnly
-                      emptyIcon={<StarIcon style={{ opacity: 0.55, fontSize: 16 }} />}
-                    />
-                    <Typography variant="caption" color="text.secondary">
-                      90.5k reviews
-                    </Typography>
-                  </Box>
-                </Stack>
-
-                <Stack direction="row" justifyContent="space-between" alignItems="center">
-                  <Stack direction="row" alignItems="center" gap={3}>
-                    <Avatar
-                      variant="rounded"
-                      sx={{
-                        bgcolor: "grey.200",
-                        color: "#000",
-                        borderRadius: 3,
-                        width: 48,
-                        height: 48,
-                      }}
-                    >
-                      <GoogleIcon />
-                    </Avatar>
-                    <Box>
-                      <Typography variant="subtitle2">Evernote</Typography>
-                      <Box display="flex" alignItems="center">
-                        <Typography variant="caption" color="text.secondary" display="flex" alignItems="center">
-                          <AppleIcon sx={{ fontSize: 14, marginRight: 1 }} />
-                          Mac
-                        </Typography>
-                        <Button
-                          variant="text"
-                          color="error"
-                          size="small"
-                          sx={{
-                            width: 38,
-                            minWidth: 38,
-                            height: 24,
-                            backgroundColor: "#FF563029",
-                            marginLeft: 1,
-                          }}
-                        >
-                          $15
-                        </Button>
-                      </Box>
-                    </Box>
-                  </Stack>
-                  <Box lineHeight="normal">
-                    <Rating
-                      sx={{ fontSize: 16 }}
-                      name="text-feedback"
-                      value={4}
-                      readOnly
-                      emptyIcon={<StarIcon style={{ opacity: 0.55, fontSize: 16 }} />}
-                    />
-                    <Typography variant="caption" color="text.secondary">
-                      73.9k reviews
-                    </Typography>
-                  </Box>
-                </Stack>
-
-                <Stack direction="row" justifyContent="space-between" alignItems="center">
-                  <Stack direction="row" alignItems="center" gap={3}>
-                    <Avatar
-                      variant="rounded"
-                      sx={{
-                        bgcolor: "grey.200",
-                        color: "#000",
-                        borderRadius: 3,
-                        width: 48,
-                        height: 48,
-                      }}
-                    >
-                      <GitHubIcon />
-                    </Avatar>
-                    <Box>
-                      <Typography variant="subtitle2">Github</Typography>
-                      <Box display="flex" alignItems="center">
-                        <Typography variant="caption" color="text.secondary" display="flex" alignItems="center">
-                          <AppleIcon sx={{ fontSize: 14, marginRight: 1 }} />
-                          Mac
-                        </Typography>
-                        <Button
-                          variant="text"
-                          color="primary"
-                          size="small"
-                          sx={{
-                            width: 38,
-                            minWidth: 38,
-                            height: 24,
-                            backgroundColor: "#22C55E29",
-                            marginLeft: 1,
-                          }}
-                        >
-                          Free
-                        </Button>
-                      </Box>
-                    </Box>
-                  </Stack>
-                  <Box lineHeight="normal">
-                    <Rating
-                      sx={{ fontSize: 16 }}
-                      name="text-feedback"
-                      value={5}
-                      readOnly
-                      emptyIcon={<StarIcon style={{ opacity: 0.55, fontSize: 16 }} />}
-                    />
-                    <Typography variant="caption" color="text.secondary">
-                      25.k reviews
-                    </Typography>
-                  </Box>
-                </Stack>
-              </Stack>
-            </CardContent>
-          </Card>
-        </Grid>
-
-        <Grid xs={12} md={8}>
-          <Card elevation={24}>
-            <CardContent>
-              <Typography variant="h6" width="auto">
-                Top Installed Countries subheader
-              </Typography>
-              <CardTable />
-            </CardContent>
-          </Card>
-        </Grid>
-
-        <Grid xs={12} md={4}>
-          <Card elevation={24}>
-            <CardContent>
-              <Typography variant="h6" gutterBottom>
-                Sales Overview
-              </Typography>
-              <Box sx={{ width: "100%" }}>
-                <LinearProgressWithLabel value={50} />
-              </Box>
-            </CardContent>
-          </Card>
-        </Grid>
-
-        <Grid xs={12} md={3}>
-          <Card elevation={24}>
-            <CardContent>
-              <Typography variant="subtitle2" gutterBottom>
-                Your Current Balance
-              </Typography>
-              <Typography variant="h3" component="div">
-                $18,765
-              </Typography>
-              <Stack direction="row" justifyContent="space-between">
-                <Typography variant="body2" color="text.secondary">
-                  Order Total
+          <Grid xs={12} md={4}>
+            <Card elevation={24}>
+              <CardContent>
+                <Typography variant="h6" gutterBottom>
+                  Sales Overview
                 </Typography>
-                <Typography variant="body2">$28,765</Typography>
-              </Stack>
-              <Stack direction="row" justifyContent="space-between">
-                <Typography variant="body2" color="text.secondary">
-                  Earning
-                </Typography>
-                <Typography variant="body2">$2,765</Typography>
-              </Stack>
-              <Stack direction="row" justifyContent="space-between">
-                <Typography variant="body2" color="text.secondary">
-                  Refunded
-                </Typography>
-                <Typography variant="body2">-$2,765</Typography>
-              </Stack>
-            </CardContent>
-            <CardActions>
-              <Button variant="contained" color="warning" fullWidth>
-                Request
-              </Button>
-              <Button variant="contained" color="primary" fullWidth>
-                Transfer
-              </Button>
-            </CardActions>
-          </Card>
-        </Grid>
-        <Grid xs={12} md={3}>
-          <Card elevation={24}>
-            <CardContent>
-              <Typography variant="h6" gutterBottom>
-                Top Authors
-              </Typography>
-              <Stack direction="row" justifyContent="space-between" alignItems="center">
-                <Stack direction="row" alignItems="center" gap={3}>
-                  <Avatar src="https://shorturl.at/rsCJ4" />
-                  <Box>
-                    <Typography variant="subtitle2">Jayvion Simon</Typography>
-                    <Typography variant="caption" color="text.secondary" display="flex" alignItems="center">
-                      <FavoriteIcon sx={{ marginRight: 1, fontSize: 14 }} />
-                      2.6k
-                    </Typography>
-                  </Box>
-                </Stack>
-                <IconButton
-                  variant="text"
-                  color="primary"
-                  sx={{
-                    backgroundColor: "#00A76F14",
-                    color: "#00A76F",
-                  }}
-                >
-                  <EmojiEventsIcon />
-                </IconButton>
-              </Stack>
-              <Stack direction="row" justifyContent="space-between" alignItems="center">
-                <Stack direction="row" alignItems="center" gap={3}>
-                  <Avatar src="https://shorturl.at/rsCJ4" />
-                  <Box>
-                    <Typography variant="subtitle2">Jayvion Simon</Typography>
-                    <Typography variant="caption" color="text.secondary" display="flex" alignItems="center">
-                      <FavoriteIcon sx={{ marginRight: 1, fontSize: 14 }} />
-                      58.9k
-                    </Typography>
-                  </Box>
-                </Stack>
-                <IconButton
-                  variant="text"
-                  color="info"
-                  sx={{
-                    backgroundColor: "#00B8D914",
-                  }}
-                >
-                  <EmojiEventsIcon />
-                </IconButton>
-              </Stack>
-              <Stack direction="row" justifyContent="space-between" alignItems="center">
-                <Stack direction="row" alignItems="center" gap={3}>
-                  <Avatar src="https://shorturl.at/rsCJ4" />
-                  <Box>
-                    <Typography variant="subtitle2">Jayvion Simon</Typography>
-                    <Typography variant="caption" color="text.secondary" display="flex" alignItems="center">
-                      <FavoriteIcon sx={{ marginRight: 1, fontSize: 14 }} />
-                      1.1k
-                    </Typography>
-                  </Box>
-                </Stack>
-                <IconButton
-                  variant="text"
-                  color="error"
-                  sx={{
-                    backgroundColor: "#FF563014",
-                  }}
-                >
-                  <EmojiEventsIcon />
-                </IconButton>
-              </Stack>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid xs={12} md={3}>
-          <Card elevation={24}>
-            <CardContent>
-              <Typography variant="h6" gutterBottom>
-                Booked
-              </Typography>
-              <Box sx={{ width: "100%" }}>
-                <LinearProgressWithLabel value={50} />
-              </Box>
-            </CardContent>
-          </Card>
-        </Grid>
+                <Box sx={{ width: "100%" }}>
+                  <LinearProgressWithLabel value={50} />
+                </Box>
+              </CardContent>
+            </Card>
+          </Grid>
 
-        <Grid xs={12} md={3}>
-          <Card elevation={24}>
-            <CardContent>
-              <Stack direction="row" justifyContent="space-between">
-                <Stack direction="row" gap={3}>
-                  <Avatar src="https://shorturl.at/rsCJ4" />
-                  <Box>
-                    <Typography variant="subtitle2">Jayvion Simon</Typography>
-                    <Typography variant="caption" color="text.secondary" display="flex" alignItems="center">
-                      <GroupIcon sx={{ marginRight: 1, fontSize: 14 }} />
-                      23 guests
-                    </Typography>
-                    <IconButton color="error" sx={{ background: "#FF563014" }}>
-                      <CallIcon sx={{ fontSize: 18 }} />
-                    </IconButton>
-                    <IconButton color="info" sx={{ background: "#00B8D914", ml: 1.6, mr: 1.6 }}>
-                      <ChatIcon sx={{ fontSize: 18 }} />
-                    </IconButton>
-                    <IconButton color="primary" sx={{ background: "#00A76F14" }}>
-                      <EmailIcon sx={{ fontSize: 18 }} />
-                    </IconButton>
-                  </Box>
-                </Stack>
-                <Button variant="outlined" color="neutralBorder">
-                  Approve
-                </Button>
-              </Stack>
-            </CardContent>
-          </Card>
-        </Grid>
+          <Grid xs={12} md={8}>
+            <TableThird />
+          </Grid>
 
-        <Grid xs={12} md={5}>
-          <Card elevation={24}>
-            <CardContent sx={{ position: "relative" }}>
-              <Stack direction="row" justifyContent="space-between">
-                <Box sx={{ width: "70%" }}>
-                  <Box display="flex" justifyContent="space-between" alignItems="center">
-                    <Button sx={{ color: `info.darker`, bgcolor: "#00B8D929" }}>Published</Button>
-                    <Typography variant="caption" color="text.secondary">
-                      12 Aug 2022 10:00 PM
-                    </Typography>
-                  </Box>
-                  <Typography variant="subtitle2">Apply These 7 Secret Techniques To Improve Event</Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Best 30 Tips For Event
-                  </Typography>
-                  <Box display="flex" justifyContent="space-between" position="absolute" bottom="20px" width="65%">
-                    <IconButton>
-                      <MoreHorizIcon />
-                    </IconButton>
-                    <Stack direction="row" gap={2}>
-                      <Typography color="text.secondary" display="flex" justifyContent="space-between" alignItems="center" variant="caption">
-                        <ChatIcon sx={{ fontSize: 16, mr: 1 }} /> 5
-                      </Typography>
-                      <Typography color="text.secondary" display="flex" justifyContent="space-between" alignItems="center" variant="caption">
-                        <RemoveRedEyeIcon sx={{ fontSize: 16, mr: 1 }} /> 12
-                      </Typography>
-                      <Typography color="text.secondary" display="flex" justifyContent="space-between" alignItems="center" variant="caption">
-                        <ShareIcon sx={{ fontSize: 16, mr: 1 }} /> 4
-                      </Typography>
+          <Grid xs={12} md={4}>
+            <Card elevation={24}>
+              <CardContent>
+                <Typography variant="h6" gutterBottom>
+                  Top Related Applications
+                </Typography>
+                <Stack gap={5}>
+                  <Stack direction="row" justifyContent="space-between" alignItems="center">
+                    <Stack direction="row" alignItems="center" gap={3}>
+                      <Avatar
+                        variant="rounded"
+                        sx={{
+                          bgcolor: "grey.200",
+                          color: "#000",
+                          borderRadius: 3,
+                          width: 48,
+                          height: 48,
+                        }}
+                      >
+                        <GoogleIcon />
+                      </Avatar>
+                      <Box>
+                        <Typography variant="subtitle2">Chrome</Typography>
+                        <Box display="flex" alignItems="center">
+                          <Typography variant="caption" color="text.secondary" display="flex" alignItems="center">
+                            <AppleIcon sx={{ fontSize: 14, marginRight: 1 }} />
+                            Mac
+                          </Typography>
+                          <Button
+                            variant="text"
+                            color="primary"
+                            size="small"
+                            sx={{
+                              width: 38,
+                              minWidth: 38,
+                              height: 24,
+                              backgroundColor: "#22C55E29",
+                              marginLeft: 1,
+                            }}
+                          >
+                            Free
+                          </Button>
+                        </Box>
+                      </Box>
                     </Stack>
+                    <Box lineHeight="normal">
+                      <Rating
+                        sx={{ fontSize: 16 }}
+                        name="text-feedback"
+                        value={2}
+                        readOnly
+                        emptyIcon={<StarIcon style={{ opacity: 0.55, fontSize: 16 }} />}
+                      />
+                      <Typography variant="caption" color="text.secondary">
+                        73.9k reviews
+                      </Typography>
+                    </Box>
+                  </Stack>
+
+                  <Stack direction="row" justifyContent="space-between" alignItems="center">
+                    <Stack direction="row" alignItems="center" gap={3}>
+                      <Avatar
+                        variant="rounded"
+                        sx={{
+                          bgcolor: "grey.200",
+                          color: "#000",
+                          borderRadius: 3,
+                          width: 48,
+                          height: 48,
+                        }}
+                      >
+                        <AddToDriveIcon />
+                      </Avatar>
+                      <Box>
+                        <Typography variant="subtitle2">Drive</Typography>
+                        <Box display="flex" alignItems="center">
+                          <Typography variant="caption" color="text.secondary" display="flex" alignItems="center">
+                            <AppleIcon sx={{ fontSize: 14, marginRight: 1 }} />
+                            Mac
+                          </Typography>
+                          <Button
+                            variant="text"
+                            color="primary"
+                            size="small"
+                            sx={{
+                              width: 38,
+                              minWidth: 38,
+                              height: 24,
+                              backgroundColor: "#22C55E29",
+                              marginLeft: 1,
+                            }}
+                          >
+                            Free
+                          </Button>
+                        </Box>
+                      </Box>
+                    </Stack>
+                    <Box lineHeight="normal">
+                      <Rating
+                        sx={{ fontSize: 16 }}
+                        name="text-feedback"
+                        value={1}
+                        readOnly
+                        emptyIcon={<StarIcon style={{ opacity: 0.55, fontSize: 16 }} />}
+                      />
+                      <Typography variant="caption" color="text.secondary">
+                        50.1k reviews
+                      </Typography>
+                    </Box>
+                  </Stack>
+
+                  <Stack direction="row" justifyContent="space-between" alignItems="center">
+                    <Stack direction="row" alignItems="center" gap={3}>
+                      <Avatar
+                        variant="rounded"
+                        sx={{
+                          bgcolor: "grey.200",
+                          color: "#000",
+                          borderRadius: 3,
+                          width: 48,
+                          height: 48,
+                        }}
+                      >
+                        <GoogleIcon />
+                      </Avatar>
+                      <Box>
+                        <Typography variant="subtitle2">Dropbox</Typography>
+                        <Box display="flex" alignItems="center">
+                          <Typography variant="caption" color="text.secondary" display="flex" alignItems="center">
+                            <AppleIcon sx={{ fontSize: 14, marginRight: 1 }} />
+                            Mac
+                          </Typography>
+                          <Button
+                            variant="text"
+                            color="error"
+                            size="small"
+                            sx={{
+                              width: 38,
+                              minWidth: 38,
+                              height: 24,
+                              backgroundColor: "#FF563029",
+                              marginLeft: 1,
+                            }}
+                          >
+                            $15
+                          </Button>
+                        </Box>
+                      </Box>
+                    </Stack>
+                    <Box lineHeight="normal">
+                      <Rating
+                        sx={{ fontSize: 16 }}
+                        name="text-feedback"
+                        value={3}
+                        readOnly
+                        emptyIcon={<StarIcon style={{ opacity: 0.55, fontSize: 16 }} />}
+                      />
+                      <Typography variant="caption" color="text.secondary">
+                        90.5k reviews
+                      </Typography>
+                    </Box>
+                  </Stack>
+
+                  <Stack direction="row" justifyContent="space-between" alignItems="center">
+                    <Stack direction="row" alignItems="center" gap={3}>
+                      <Avatar
+                        variant="rounded"
+                        sx={{
+                          bgcolor: "grey.200",
+                          color: "#000",
+                          borderRadius: 3,
+                          width: 48,
+                          height: 48,
+                        }}
+                      >
+                        <GoogleIcon />
+                      </Avatar>
+                      <Box>
+                        <Typography variant="subtitle2">Evernote</Typography>
+                        <Box display="flex" alignItems="center">
+                          <Typography variant="caption" color="text.secondary" display="flex" alignItems="center">
+                            <AppleIcon sx={{ fontSize: 14, marginRight: 1 }} />
+                            Mac
+                          </Typography>
+                          <Button
+                            variant="text"
+                            color="error"
+                            size="small"
+                            sx={{
+                              width: 38,
+                              minWidth: 38,
+                              height: 24,
+                              backgroundColor: "#FF563029",
+                              marginLeft: 1,
+                            }}
+                          >
+                            $15
+                          </Button>
+                        </Box>
+                      </Box>
+                    </Stack>
+                    <Box lineHeight="normal">
+                      <Rating
+                        sx={{ fontSize: 16 }}
+                        name="text-feedback"
+                        value={4}
+                        readOnly
+                        emptyIcon={<StarIcon style={{ opacity: 0.55, fontSize: 16 }} />}
+                      />
+                      <Typography variant="caption" color="text.secondary">
+                        73.9k reviews
+                      </Typography>
+                    </Box>
+                  </Stack>
+
+                  <Stack direction="row" justifyContent="space-between" alignItems="center">
+                    <Stack direction="row" alignItems="center" gap={3}>
+                      <Avatar
+                        variant="rounded"
+                        sx={{
+                          bgcolor: "grey.200",
+                          color: "#000",
+                          borderRadius: 3,
+                          width: 48,
+                          height: 48,
+                        }}
+                      >
+                        <GitHubIcon />
+                      </Avatar>
+                      <Box>
+                        <Typography variant="subtitle2">Github</Typography>
+                        <Box display="flex" alignItems="center">
+                          <Typography variant="caption" color="text.secondary" display="flex" alignItems="center">
+                            <AppleIcon sx={{ fontSize: 14, marginRight: 1 }} />
+                            Mac
+                          </Typography>
+                          <Button
+                            variant="text"
+                            color="primary"
+                            size="small"
+                            sx={{
+                              width: 38,
+                              minWidth: 38,
+                              height: 24,
+                              backgroundColor: "#22C55E29",
+                              marginLeft: 1,
+                            }}
+                          >
+                            Free
+                          </Button>
+                        </Box>
+                      </Box>
+                    </Stack>
+                    <Box lineHeight="normal">
+                      <Rating
+                        sx={{ fontSize: 16 }}
+                        name="text-feedback"
+                        value={5}
+                        readOnly
+                        emptyIcon={<StarIcon style={{ opacity: 0.55, fontSize: 16 }} />}
+                      />
+                      <Typography variant="caption" color="text.secondary">
+                        25.k reviews
+                      </Typography>
+                    </Box>
+                  </Stack>
+                </Stack>
+              </CardContent>
+            </Card>
+          </Grid>
+
+          <Grid xs={12} md={4}>
+            <Card elevation={24}>
+              <CardContent>
+                <Typography variant="h6" width="auto">
+                  Top Installed Countries subheader
+                </Typography>
+                <CardTable />
+              </CardContent>
+            </Card>
+          </Grid>
+
+          <Grid xs={12} md={4}>
+            <Card elevation={24}>
+              <CardContent>
+                <Typography variant="h6" gutterBottom>
+                  Top Authors
+                </Typography>
+                <Stack direction="row" justifyContent="space-between" alignItems="center">
+                  <Stack direction="row" alignItems="center" gap={3}>
+                    <Avatar src="https://shorturl.at/rsCJ4" />
+                    <Box>
+                      <Typography variant="subtitle2">Jayvion Simon</Typography>
+                      <Typography variant="caption" color="text.secondary" display="flex" alignItems="center">
+                        <FavoriteIcon sx={{ marginRight: 1, fontSize: 14 }} />
+                        2.6k
+                      </Typography>
+                    </Box>
+                  </Stack>
+                  <IconButton
+                    variant="text"
+                    color="primary"
+                    sx={{
+                      backgroundColor: "#00A76F14",
+                      color: "#00A76F",
+                    }}
+                  >
+                    <EmojiEventsIcon />
+                  </IconButton>
+                </Stack>
+                <Stack direction="row" justifyContent="space-between" alignItems="center">
+                  <Stack direction="row" alignItems="center" gap={3}>
+                    <Avatar src="https://shorturl.at/rsCJ4" />
+                    <Box>
+                      <Typography variant="subtitle2">Jayvion Simon</Typography>
+                      <Typography variant="caption" color="text.secondary" display="flex" alignItems="center">
+                        <FavoriteIcon sx={{ marginRight: 1, fontSize: 14 }} />
+                        58.9k
+                      </Typography>
+                    </Box>
+                  </Stack>
+                  <IconButton
+                    variant="text"
+                    color="info"
+                    sx={{
+                      backgroundColor: "#00B8D914",
+                    }}
+                  >
+                    <EmojiEventsIcon />
+                  </IconButton>
+                </Stack>
+                <Stack direction="row" justifyContent="space-between" alignItems="center">
+                  <Stack direction="row" alignItems="center" gap={3}>
+                    <Avatar src="https://shorturl.at/rsCJ4" />
+                    <Box>
+                      <Typography variant="subtitle2">Jayvion Simon</Typography>
+                      <Typography variant="caption" color="text.secondary" display="flex" alignItems="center">
+                        <FavoriteIcon sx={{ marginRight: 1, fontSize: 14 }} />
+                        1.1k
+                      </Typography>
+                    </Box>
+                  </Stack>
+                  <IconButton
+                    variant="text"
+                    color="error"
+                    sx={{
+                      backgroundColor: "#FF563014",
+                    }}
+                  >
+                    <EmojiEventsIcon />
+                  </IconButton>
+                </Stack>
+              </CardContent>
+            </Card>
+          </Grid>
+
+          <Grid xs={12} md={4}>
+            <Card elevation={24}>
+              <CardContent>
+                <Typography variant="h6" gutterBottom>
+                  Traffic by Site
+                </Typography>
+
+                <Grid sx={{ gridTemplateColumns: "repeat(2, 1fr)", display: "grid", gap: 4 }}>
+                  <Box
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                    flexDirection="column"
+                    textAlign="center"
+                    border="1px solid rgba(145, 158, 171, 0.16)"
+                    borderRadius={2}
+                    height={86}
+                  >
+                    <FacebookIcon color="info" />
+                    <Typography variant="h6" sx={{ width: "auto" }}>
+                      34.9k
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary" sx={{ lineHeight: "normal" }}>
+                      FaceBook
+                    </Typography>
                   </Box>
+
+                  <Box
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                    flexDirection="column"
+                    textAlign="center"
+                    border="1px solid rgba(145, 158, 171, 0.16)"
+                    borderRadius={2}
+                    height={86}
+                  >
+                    <GoogleIcon />
+                    <Typography variant="h6" sx={{ width: "auto" }}>
+                      91.4k
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary" sx={{ lineHeight: "normal" }}>
+                      Google
+                    </Typography>
+                  </Box>
+
+                  <Box
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                    flexDirection="column"
+                    textAlign="center"
+                    border="1px solid rgba(145, 158, 171, 0.16)"
+                    borderRadius={2}
+                    height={86}
+                  >
+                    <LinkedInIcon color="info" />
+                    <Typography variant="h6" sx={{ width: "auto" }}>
+                      50.1k
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary" sx={{ lineHeight: "normal" }}>
+                      Linkedin
+                    </Typography>
+                  </Box>
+
+                  <Box
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                    flexDirection="column"
+                    textAlign="center"
+                    border="1px solid rgba(145, 158, 171, 0.16)"
+                    borderRadius={2}
+                    height={86}
+                  >
+                    <TwitterIcon color="info" />
+                    <Typography variant="h6" sx={{ width: "auto" }}>
+                      90.5k
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary" sx={{ lineHeight: "normal" }}>
+                      Twitter
+                    </Typography>
+                  </Box>
+                </Grid>
+              </CardContent>
+            </Card>
+          </Grid>
+
+          <Grid xs={12} md={3}>
+            <Card elevation={24}>
+              <CardContent>
+                <Typography variant="subtitle2" gutterBottom>
+                  Your Current Balance
+                </Typography>
+                <Typography variant="h3" component="div">
+                  $18,765
+                </Typography>
+                <Stack direction="row" justifyContent="space-between">
+                  <Typography variant="body2" color="text.secondary">
+                    Order Total
+                  </Typography>
+                  <Typography variant="body2">$28,765</Typography>
+                </Stack>
+                <Stack direction="row" justifyContent="space-between">
+                  <Typography variant="body2" color="text.secondary">
+                    Earning
+                  </Typography>
+                  <Typography variant="body2">$2,765</Typography>
+                </Stack>
+                <Stack direction="row" justifyContent="space-between">
+                  <Typography variant="body2" color="text.secondary">
+                    Refunded
+                  </Typography>
+                  <Typography variant="body2">-$2,765</Typography>
+                </Stack>
+              </CardContent>
+              <CardActions>
+                <Button variant="contained" color="warning" fullWidth>
+                  Request
+                </Button>
+                <Button variant="contained" color="primary" fullWidth>
+                  Transfer
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
+
+          <Grid xs={12} md={6}>
+            <Card elevation={24}>
+              <CardContent>
+                <Typography variant="h6" gutterBottom>
+                  Booked
+                </Typography>
+                <Box sx={{ width: "100%" }}>
+                  <LinearProgressWithLabel value={50} />
                 </Box>
-                <img src={cardImg} style={{ borderRadius: 12 }} alt="mastercard" />
-                <Avatar sx={{ position: "absolute", right: 35, top: 35 }} src="https://shorturl.at/rsCJ4" />
-              </Stack>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </Grid>
+
+          <Grid xs={12} md={3}>
+            <Card elevation={24}>
+              <CardContent>
+                <Stack direction="row" justifyContent="space-between">
+                  <Stack direction="row" gap={3}>
+                    <Avatar src="https://shorturl.at/rsCJ4" />
+                    <Box>
+                      <Typography variant="subtitle2">Jayvion Simon</Typography>
+                      <Typography variant="caption" color="text.secondary" display="flex" alignItems="center">
+                        <GroupIcon sx={{ marginRight: 1, fontSize: 14 }} />
+                        23 guests
+                      </Typography>
+                      <IconButton color="error" sx={{ background: "#FF563014" }}>
+                        <CallIcon sx={{ fontSize: 18 }} />
+                      </IconButton>
+                      <IconButton color="info" sx={{ background: "#00B8D914", ml: 1.6, mr: 1.6 }}>
+                        <ChatIcon sx={{ fontSize: 18 }} />
+                      </IconButton>
+                      <IconButton color="primary" sx={{ background: "#00A76F14" }}>
+                        <EmailIcon sx={{ fontSize: 18 }} />
+                      </IconButton>
+                    </Box>
+                  </Stack>
+                  <Button variant="outlined" color="neutralBorder">
+                    Approve
+                  </Button>
+                </Stack>
+              </CardContent>
+            </Card>
+          </Grid>
+
+          <Grid xs={12} md={4}>
+            <Card elevation={24}>
+              <DonutChart />
+            </Card>
+          </Grid>
+
+          <Grid xs={12} md={8}>
+            <Card elevation={24}>
+              <LineChart />
+            </Card>
+          </Grid>
         </Grid>
-
-        <Grid xs={12} md={4}>
-          <Card elevation={24}>
-            <CardContent>
-              <Typography variant="h6" gutterBottom>
-                Traffic by Site
-              </Typography>
-
-              <Grid sx={{ gridTemplateColumns: "repeat(2, 1fr)", display: "grid", gap: 4 }}>
-                <Box
-                  display="flex"
-                  justifyContent="center"
-                  alignItems="center"
-                  flexDirection="column"
-                  textAlign="center"
-                  border="1px solid rgba(145, 158, 171, 0.16)"
-                  borderRadius={2}
-                  height={86}
-                >
-                  <FacebookIcon color="info" />
-                  <Typography variant="h6">34.9k</Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ lineHeight: "normal" }}>
-                    FaceBook
-                  </Typography>
-                </Box>
-
-                <Box
-                  display="flex"
-                  justifyContent="center"
-                  alignItems="center"
-                  flexDirection="column"
-                  textAlign="center"
-                  border="1px solid rgba(145, 158, 171, 0.16)"
-                  borderRadius={2}
-                  height={86}
-                >
-                  <GoogleIcon />
-                  <Typography variant="h6">91.4k</Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ lineHeight: "normal" }}>
-                    Google
-                  </Typography>
-                </Box>
-
-                <Box
-                  display="flex"
-                  justifyContent="center"
-                  alignItems="center"
-                  flexDirection="column"
-                  textAlign="center"
-                  border="1px solid rgba(145, 158, 171, 0.16)"
-                  borderRadius={2}
-                  height={86}
-                >
-                  <LinkedInIcon color="info" />
-                  <Typography variant="h6">50.1k</Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ lineHeight: "normal" }}>
-                    Linkedin
-                  </Typography>
-                </Box>
-
-                <Box
-                  display="flex"
-                  justifyContent="center"
-                  alignItems="center"
-                  flexDirection="column"
-                  textAlign="center"
-                  border="1px solid rgba(145, 158, 171, 0.16)"
-                  borderRadius={2}
-                  height={86}
-                >
-                  <TwitterIcon color="info" />
-                  <Typography variant="h6">90.5k</Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ lineHeight: "normal" }}>
-                    Twitter
-                  </Typography>
-                </Box>
-              </Grid>
-            </CardContent>
-          </Card>
-        </Grid>
-      </Grid>
+      </Container>
     </>
   );
 }

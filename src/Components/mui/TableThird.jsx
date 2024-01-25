@@ -284,7 +284,6 @@ export default function EnhancedTable() {
   return (
     <Box
       sx={{
-        width: "50%",
         display: "block",
         margin: "auto",
       }}
@@ -293,7 +292,6 @@ export default function EnhancedTable() {
         sx={{
           width: "100%",
           mb: 2,
-          mt: 10,
           borderRadius: 4,
           bgcolor: `paperBackground.main`,
         }}

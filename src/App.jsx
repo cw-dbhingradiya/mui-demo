@@ -49,6 +49,7 @@ import ParentComponent from "./sections/mui/ParentComponent";
 import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
+import Team from "./scenes/team";
 
 const App = () => {
   const [darkMode, setDarkMode] = React.useState(false);
@@ -116,6 +117,7 @@ const App = () => {
             <Sidebar isSidebar={isSidebar} />
             <Routes>
               <Route path="/" element={<Dashboard />} />
+              <Route path="/team" element={<Team />} />
             </Routes>
           </main>
         </div>
