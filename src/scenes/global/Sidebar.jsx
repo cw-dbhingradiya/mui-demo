@@ -98,7 +98,7 @@ const Sidebar = () => {
             <Typography className="sidebar-head" variant="body2" color="inherit" sx={{ m: "15px 0 5px 20px" }}>
               OVERVIEW
             </Typography>
-            <Item title="Dashboard" to="/" icon={<HomeOutlinedIcon />} selected={selected} setSelected={setSelected} />
+            <Item title="App" to="/" icon={<HomeOutlinedIcon />} selected={selected} setSelected={setSelected} />
             <Item title="Manage Team" to="/team" icon={<ShoppingBagOutlinedIcon />} selected={selected} setSelected={setSelected} />
             <Item title="Contacts Information" to="/contacts" icon={<InsertChartOutlinedIcon />} selected={selected} setSelected={setSelected} />
             <Item title="Invoices Balances" to="/invoices" icon={<AccountBalanceOutlinedIcon />} selected={selected} setSelected={setSelected} />

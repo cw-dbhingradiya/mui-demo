@@ -226,7 +226,7 @@ body,
 
 .apexcharts-legend {
   left: 54% !important;
-  bottom: 0 !important;
+  bottom: 0px !important;
   flex-direction: row !important;
   transform: translate(-50%, -50%);
   top: auto !important;

@@ -301,7 +301,7 @@ export default function EnhancedTable() {
           New Invoice
         </Typography>
         <EnhancedTableToolbar numSelected={selected.length} />
-        <TableContainer>
+        <TableContainer sx={{ borderRadius: "0 0 16px 16px" }}>
           <Table sx={{ minWidth: 750 }} aria-labelledby="tableTitle" size={dense ? "small" : "medium"}>
             <EnhancedTableHead
               numSelected={selected.length}

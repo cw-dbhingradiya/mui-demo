@@ -7,14 +7,14 @@ export const ThemeButton = {
         paddingLeft: 16,
         paddingRight: 16,
         fontSize: 15,
-        fontWeight: 700,
+        fontWeight: 600,
         height: 48,
       },
       sizeSmall: {
         width: 48,
         height: 30,
         fontSize: 13,
-        fontWeight: 700,
+        fontWeight: 600,
         lineHeight: "22px",
       },
       sizeMedium: {

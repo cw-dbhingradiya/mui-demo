@@ -52,12 +52,7 @@ export default function ButtonView() {
   return (
     <>
       <Container sx={{ my: 10 }}>
-        <Tabs
-          value={currentTab}
-          onChange={handleChangeTab}
-          textColor="primary"
-          indicatorColor="primary"
-        >
+        <Tabs value={currentTab} onChange={handleChangeTab} textColor="primary" indicatorColor="primary">
           {TABS.map((tab) => (
             <Tab key={tab.value} value={tab.value} label={tab.label} />
           ))}

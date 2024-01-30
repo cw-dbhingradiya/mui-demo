@@ -38,6 +38,10 @@ import cardImg from "../../../public/assets/image/cardimg.png";
 import CardTable from "./CardTable";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Unstable_Grid2";
+import EjectIcon from "@mui/icons-material/Eject";
+import BarChartRoundedIcon from "@mui/icons-material/BarChartRounded";
+
+import CarouselView from "../../sections/extra/carousel-view";
 
 import TableThird from "./TableThird";
 import LineChart from "./LineChart";
@@ -243,15 +247,79 @@ export default function BasicCard() {
           </Grid>
 
           <Grid xs={12} md={4}>
+            {/* <Box sx={{ width: "100%" }}>
+                  <LinearProgressWithLabel value={50} />
+                </Box> */}
+            <CarouselView />
+          </Grid>
+
+          <Grid xs={12} md={4}>
+            <Card>
+              <CardContent>
+                <Typography variant="subtitle1">Total Active Users</Typography>
+                <Stack flexDirection="row" justifyContent="space-between">
+                  <Box>
+                    <Typography variant="subtitle1" sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+                      <EjectIcon color="primary" /> +2.6%
+                    </Typography>
+                    <Typography variant="h3">18,765</Typography>
+                  </Box>
+                  <BarChartRoundedIcon color="primary" sx={{ fontSize: "50px" }} />
+                </Stack>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid xs={12} md={4}>
+            <Card>
+              <CardContent>
+                <Typography variant="subtitle1">Total Installed</Typography>
+                <Stack flexDirection="row" justifyContent="space-between">
+                  <Box>
+                    <Typography variant="subtitle1" sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+                      <EjectIcon color="primary" /> +0.2%
+                    </Typography>
+                    <Typography variant="h3">4,876</Typography>
+                  </Box>
+                  <BarChartRoundedIcon color="info" sx={{ fontSize: "50px" }} />
+                </Stack>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid xs={12} md={4}>
+            <Card>
+              <CardContent>
+                <Typography variant="subtitle1">Total Downloads</Typography>
+                <Stack flexDirection="row" justifyContent="space-between">
+                  <Box>
+                    <Typography variant="subtitle1" sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+                      <EjectIcon color="error" sx={{ transform: "rotate(180deg)" }} /> -0.1%
+                    </Typography>
+                    <Typography variant="h3">678</Typography>
+                  </Box>
+                  <BarChartRoundedIcon color="error" sx={{ fontSize: "50px" }} />
+                </Stack>
+              </CardContent>
+            </Card>
+          </Grid>
+
+          <Grid xs={12} md={4}>
+            <Card elevation={24} sx={{ height: "560px" }}>
+              <CardContent>
+                <Typography variant="h5">Current Download</Typography>
+              </CardContent>
+              <DonutChart />
+            </Card>
+          </Grid>
+
+          <Grid xs={12} md={8}>
             <Card elevation={24}>
               <CardContent>
-                <Typography variant="h6" gutterBottom>
-                  Sales Overview
+                <Typography variant="h5">Area Installed</Typography>
+                <Typography variant="caption" color="inherit">
+                  (+43%) than last year
                 </Typography>
-                <Box sx={{ width: "100%" }}>
-                  <LinearProgressWithLabel value={50} />
-                </Box>
               </CardContent>
+              <LineChart />
             </Card>
           </Grid>
 
@@ -543,7 +611,7 @@ export default function BasicCard() {
 
           <Grid xs={12} md={4}>
             <Card elevation={24}>
-              <CardContent>
+              <CardContent sx={{ display: "flex", flexDirection: "column", gap: 4 }}>
                 <Typography variant="h6" gutterBottom>
                   Top Authors
                 </Typography>
@@ -703,7 +771,7 @@ export default function BasicCard() {
             </Card>
           </Grid>
 
-          <Grid xs={12} md={3}>
+          {/* <Grid xs={12} md={3}>
             <Card elevation={24}>
               <CardContent>
                 <Typography variant="subtitle2" gutterBottom>
@@ -784,19 +852,7 @@ export default function BasicCard() {
                 </Stack>
               </CardContent>
             </Card>
-          </Grid>
-
-          <Grid xs={12} md={4}>
-            <Card elevation={24}>
-              <DonutChart />
-            </Card>
-          </Grid>
-
-          <Grid xs={12} md={8}>
-            <Card elevation={24}>
-              <LineChart />
-            </Card>
-          </Grid>
+          </Grid> */}
         </Grid>
       </Container>
     </>
