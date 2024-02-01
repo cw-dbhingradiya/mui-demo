@@ -5,20 +5,21 @@ import AdminPanelSettingsOutlinedIcon from "@mui/icons-material/AdminPanelSettin
 import LockOpenOutlinedIcon from "@mui/icons-material/LockOpenOutlined";
 import SecurityOutlinedIcon from "@mui/icons-material/SecurityOutlined";
 import Header from "../../components/Header";
+import { commonColor } from "../../theme/color";
 
 const Team = () => {
   const theme = useTheme();
   const columns = [
-    { field: "id", headerName: "ID" },
+    { field: "id", headerName: "Invoice ID" },
     {
       field: "name",
-      headerName: "Name",
+      headerName: "Category",
       flex: 1,
       cellClassName: "name-column--cell",
     },
     {
       field: "age",
-      headerName: "Age",
+      headerName: "Price",
       type: "number",
       headerAlign: "left",
       align: "left",
@@ -28,24 +29,29 @@ const Team = () => {
       headerName: "Phone Number",
       flex: 1,
     },
-    {
-      field: "email",
-      headerName: "Email",
-      flex: 1,
-    },
+
     {
       field: "accessLevel",
       headerName: "Access Level",
       flex: 1,
       renderCell: ({ row: { access } }) => {
         return (
-          <Box width="60%" m="0 auto" p="5px" display="flex" justifyContent="center" backgroundColor="#f5f5f5" borderRadius="4px">
+          <Box
+            width="60%"
+            m="0 auto"
+            p="5px"
+            display="flex"
+            justifyContent="center"
+            backgroundColor={
+              access === "admin" ? commonColor.primary.lighter : access === "manager" ? commonColor.error.lighter : commonColor.warning.lighter
+            }
+            color={access === "admin" ? commonColor.primary.darker : access === "manager" ? commonColor.error.darker : commonColor.warning.darker}
+            borderRadius="4px"
+          >
             {access === "admin" && <AdminPanelSettingsOutlinedIcon />}
             {access === "manager" && <SecurityOutlinedIcon />}
             {access === "user" && <LockOpenOutlinedIcon />}
-            <Typography color="primary" sx={{ ml: "5px" }}>
-              {access}
-            </Typography>
+            <Typography sx={{ ml: "5px" }}>{access}</Typography>
           </Box>
         );
       },
@@ -84,7 +90,7 @@ const Team = () => {
           },
         }}
       >
-        <DataGrid checkboxSelection rows={mockDataTeam} columns={columns} />
+        <DataGrid rows={mockDataTeam} columns={columns} />
       </Box>
     </Box>
   );

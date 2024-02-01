@@ -269,6 +269,7 @@ export default function BasicCard() {
               </CardContent>
             </Card>
           </Grid>
+
           <Grid xs={12} md={4}>
             <Card>
               <CardContent>
@@ -285,6 +286,7 @@ export default function BasicCard() {
               </CardContent>
             </Card>
           </Grid>
+
           <Grid xs={12} md={4}>
             <Card>
               <CardContent>
@@ -700,6 +702,7 @@ export default function BasicCard() {
                     border="1px solid rgba(145, 158, 171, 0.16)"
                     borderRadius={2}
                     height={86}
+                    padding={2}
                   >
                     <FacebookIcon color="info" />
                     <Typography variant="h6" sx={{ width: "auto" }}>
@@ -719,6 +722,7 @@ export default function BasicCard() {
                     border="1px solid rgba(145, 158, 171, 0.16)"
                     borderRadius={2}
                     height={86}
+                    padding={2}
                   >
                     <GoogleIcon />
                     <Typography variant="h6" sx={{ width: "auto" }}>
@@ -738,6 +742,7 @@ export default function BasicCard() {
                     border="1px solid rgba(145, 158, 171, 0.16)"
                     borderRadius={2}
                     height={86}
+                    padding={2}
                   >
                     <LinkedInIcon color="info" />
                     <Typography variant="h6" sx={{ width: "auto" }}>
@@ -757,6 +762,7 @@ export default function BasicCard() {
                     border="1px solid rgba(145, 158, 171, 0.16)"
                     borderRadius={2}
                     height={86}
+                    padding={2}
                   >
                     <TwitterIcon color="info" />
                     <Typography variant="h6" sx={{ width: "auto" }}>
